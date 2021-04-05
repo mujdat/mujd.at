@@ -61,11 +61,15 @@ export default {
       selectedTrack: null,
     }
   },
-  head: {
-    title:
-      'Müjdat Korkmaz | Music | Front-End Developer based in Dresden, Germany',
+  head() {
+    return {
+      title: this.musicTitle,
+    }
   },
   computed: {
+    musicTitle() {
+      return this.$store.state.meta.music.title
+    },
     playlists() {
       return this.$store.state.music.playlists
     },

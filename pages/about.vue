@@ -29,11 +29,15 @@
 <script>
 export default {
   name: 'AboutPage',
-  head: {
-    title:
-      'Müjdat Korkmaz | About | Front-End Developer based in Dresden, Germany',
+  head() {
+    return {
+      title: this.aboutTitle,
+    }
   },
   computed: {
+    aboutTitle() {
+      return this.$store.state.meta.about.title
+    },
     currentAge() {
       const currentYear = new Date().getFullYear()
       const birthYear = 1992

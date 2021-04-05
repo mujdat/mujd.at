@@ -8,17 +8,43 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title:
-      'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany',
+      'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany.',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
+      // Global Meta Attrs
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
         content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`,
+      },
+
+      // Twitter Card
+      { name: 'twitter:site', content: '@mujdatkorkmaz' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: 'https://mujd.at',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content:
+          'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany.',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`,
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/twitter-card.png',
       },
     ],
     link: [

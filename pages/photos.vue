@@ -126,11 +126,15 @@
 import Vue from 'vue'
 export default Vue.extend({
   name: 'PhotosPage',
-  head: {
-    title:
-      'Müjdat Korkmaz | Photos | Front-End Developer based in Dresden, Germany',
+  head() {
+    return {
+      title: this.photosTitle,
+    }
   },
   computed: {
+    photosTitle() {
+      return this.$store.state.meta.photos.title
+    },
     photos() {
       return this.$store.state.photos.photos
     },
