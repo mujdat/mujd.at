@@ -113,7 +113,7 @@
             </div>
           </div>
         </div>
-        <div class="mx-auto text-center">
+        <div v-if="!likesLoading" class="mx-auto text-center">
           <a href="https://unsplash.com/@_mujdat/likes" target="_blank">
             <custom-button>See all likes</custom-button>
           </a>
