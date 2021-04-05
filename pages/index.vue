@@ -3,8 +3,11 @@
     <intro-text title="Hello! My name is Müjdat Korkmaz">
       <p>
         I'm a Front-End Developer, I work at
-        <span class="text-[#f7a823]">
-          <a class="hover:underline" href="https://phmu.de"> PHMU</a></span
+        <a
+          class="text-[#f7a823] hover:underline font-bold"
+          href="https://phmu.de"
+        >
+          PHMU</a
         >
         and live in the beautiful city of Dresden, Germany.
       </p>

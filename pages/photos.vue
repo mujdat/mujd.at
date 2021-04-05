@@ -36,7 +36,7 @@
                 /></a>
               </div>
               <p
-                class="text-gray-700 dark:text-gray-500"
+                class="text-gray-700 dark:text-gray-400"
                 :class="
                   item.description && item.description.length ? '' : 'italic'
                 "
@@ -48,7 +48,7 @@
                 }}
               </p>
               <p
-                class="text-gray-700 dark:text-gray-500 font-medium text-sm flex flex-row items-center"
+                class="text-gray-700 dark:text-gray-400 font-medium text-sm flex flex-row items-center"
               >
                 <span class="flex flex-row items-center mr-4">
                   <outline-heart-icon class="h-4 w-4 mr-1"></outline-heart-icon>
@@ -84,7 +84,7 @@
                 /></a>
               </div>
               <p
-                class="text-gray-700 dark:text-gray-500"
+                class="text-gray-700 dark:text-gray-400"
                 :class="
                   item.description && item.description.length ? '' : 'italic'
                 "
@@ -105,7 +105,7 @@
                 >
               </p>
               <p
-                class="text-gray-700 dark:text-gray-500 font-medium text-sm flex flex-row items-center"
+                class="text-gray-700 dark:text-gray-400 font-medium text-sm flex flex-row items-center"
               >
                 <outline-heart-icon class="h-4 w-4 mr-1 0"></outline-heart-icon>
                 {{ item.likes ? item.likes : 0 }}

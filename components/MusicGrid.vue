@@ -39,12 +39,15 @@
               </p>
             </div>
           </a>
-          <p v-if="playlists" class="block text-sm font-medium text-gray-500">
+          <p
+            v-if="playlists"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-400"
+          >
             {{ item.description }}
           </p>
           <div
             v-if="!playlists"
-            class="block text-sm font-medium text-gray-500"
+            class="block text-sm font-medium text-gray-700 dark:text-gray-400"
           >
             <span v-for="(artist, index) in item.artists" :key="artist.uuid">
               <a :href="artist.url" target="_blank" class="hover:underline">{{
@@ -68,7 +71,7 @@
                   previewItem.isPlaying &&
                   previewItem.id === item.id
                     ? 'bg-[#1db954] border-[#1db954] text-white'
-                    : 'text-gray-500 border-gray-500'
+                    : 'text-gray-700 border-gray-700 dark:text-gray-400 dark:border-gray-400'
                 "
                 @click.prevent="
                   previewItem &&

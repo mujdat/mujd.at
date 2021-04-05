@@ -39,7 +39,9 @@ export const actions = {
               src: item.urls.small,
               likes: item.likes,
               description: item.description,
-              alt: item.alt_description,
+              alt: item.alt_description
+                ? item.alt_description
+                : item.description,
               views: item.statistics.views.total,
             }
           })
@@ -67,7 +69,9 @@ export const actions = {
               src: item.urls.small,
               likes: item.likes,
               description: item.description,
-              alt: item.alt_description,
+              alt: item.alt_description
+                ? item.alt_description
+                : item.description,
               user: { name: item.user.name, link: item.user.links.html },
             }
           })
