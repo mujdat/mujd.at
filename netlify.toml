@@ -2,3 +2,4 @@
   from = "https://mujdat.netlify.app"
   to = "https://mujd.at"
   status = 301
+  force = true
