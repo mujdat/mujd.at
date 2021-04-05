@@ -1,0 +1,27 @@
+<template>
+  <div
+    v-if="resolution === 'desktop'"
+    class="flex justify-start lg:w-0 lg:flex-1"
+  >
+    <nuxt-link to="/">
+      <img class="h-12 w-12 rounded-full" src="~/assets/img/avatar.jpg" />
+    </nuxt-link>
+  </div>
+  <div v-else>
+    <nuxt-link to="/">
+      <img class="h-12 w-12 rounded-full" src="~/assets/img/avatar.jpg" />
+    </nuxt-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Avatar',
+  props: {
+    resolution: {
+      type: String,
+      default: 'desktop',
+    },
+  },
+}
+</script>

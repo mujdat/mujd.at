@@ -1,0 +1,76 @@
+export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // SSR Property: https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-ssr/
+  ssr: false,
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
+  head: {
+    title:
+      'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany',
+    htmlAttrs: {
+      lang: 'en',
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`,
+      },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
+    ],
+  },
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [],
+
+  // Tailwind Just-In-Time: https://tailwindcss.nuxtjs.org/setup/#tailwind-just-in-time
+  tailwindcss: {
+    jit: true,
+  },
+
+  // Nuxt Color Mode: https://color-mode.nuxtjs.org/
+  colorMode: {
+    classSuffix: '',
+  },
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: ['~/plugins/vue-uuid.js'],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    '@nuxt/typescript-build',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+    // https://color-mode.nuxtjs.org/
+    '@nuxtjs/color-mode',
+    // https://vite.nuxtjs.org/
+    'nuxt-vite',
+    // https://www.npmjs.com/package/@nuxt-hero-icons/outline
+    '@nuxt-hero-icons/outline/nuxt',
+    // https://www.npmjs.com/package/@nuxt-hero-icons/solid
+    '@nuxt-hero-icons/solid/nuxt',
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+  ],
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {},
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+}
