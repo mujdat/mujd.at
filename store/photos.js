@@ -36,7 +36,7 @@ export const actions = {
             return {
               id: item.id,
               link: item.links.html,
-              src: item.urls.regular,
+              src: item.urls.small,
               likes: item.likes,
               description: item.description,
               alt: item.alt_description,
@@ -45,7 +45,6 @@ export const actions = {
           })
           commit('SET_PHOTOS', photos)
           commit('SET_PHOTOS_LOADING', false)
-          console.log(res)
         }
       }
       getPhotos()
@@ -65,7 +64,7 @@ export const actions = {
             return {
               id: item.id,
               link: item.links.html,
-              src: item.urls.regular,
+              src: item.urls.small,
               likes: item.likes,
               description: item.description,
               alt: item.alt_description,

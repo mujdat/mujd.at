@@ -45,7 +45,7 @@ export const actions = {
               id: item.id,
               name: item.name,
               description: item.description,
-              img: item.images[0].url,
+              img: item.images[1].url,
               url: item.external_urls.spotify,
             }
           })
@@ -82,7 +82,7 @@ export const actions = {
               id: item.track.id,
               uuid: this._vm.$uuid.v4(),
               url: item.track.external_urls.spotify,
-              img: item.track.album.images[0].url,
+              img: item.track.album.images[1].url,
               artists: artistsArray,
               preview_url: item.track.preview_url,
               demo: {
@@ -132,7 +132,7 @@ export const actions = {
               id: item.track.id,
               uuid: this._vm.$uuid.v4(),
               url: item.track.external_urls.spotify,
-              img: item.track.album.images[0].url,
+              img: item.track.album.images[1].url,
               artists: artistsArray,
               preview_url: item.track.preview_url,
               demo: {

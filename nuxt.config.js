@@ -44,7 +44,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/twitter-card.png',
+        content: 'https://mujd.at/twitter-card.png',
       },
     ],
     link: [

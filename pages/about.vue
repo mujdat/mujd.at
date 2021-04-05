@@ -24,6 +24,22 @@
         found my dream job as a Front-End Developer at PHMU!
       </p>
     </intro-text>
+    <intro-text title="Contact">
+      You can reach out to me via DM on
+      <a
+        class="text-[#1da1f2] hover:underline"
+        href="https://twitter.com/mujdatkorkmaz"
+      >
+        Twitter</a
+      >
+      but if you want to talk to me about something more elaborate, you can send
+      me an email to
+      <a
+        class="text-gray-900 dark:text-gray-300 hover:underline"
+        href="mailto:me@mujd%2Eat"
+        >me@mujd.at</a
+      >
+    </intro-text>
   </div>
 </template>
 <script>
