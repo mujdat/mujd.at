@@ -18,7 +18,7 @@
       </p>
       <div>
         <nuxt-link to="about">
-          <custom-button>More about me</custom-button>
+          <btn>More about me</btn>
         </nuxt-link>
       </div>
     </intro-text>

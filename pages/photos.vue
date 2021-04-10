@@ -115,7 +115,7 @@
         </div>
         <div v-if="!likesLoading" class="mx-auto text-center">
           <a href="https://unsplash.com/@_mujdat/likes" target="_blank">
-            <custom-button>See all likes</custom-button>
+            <btn>See all likes</btn>
           </a>
         </div>
       </div>

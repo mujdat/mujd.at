@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'CustomButton',
+  name: 'Btn',
   props: {
     size: {
       type: String,
