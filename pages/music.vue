@@ -6,7 +6,7 @@
         work and focus on a task at hand. My favorite genre is electronic music
         but I don't really have a spesific sub-genre. Most of the time I use
         <a
-          class="text-gray-900 dark:text-gray-300 hover:underline"
+          class="text-gray-900 dark:text-gray-300 transition duration-300 border-b border-transparent hover:border-gray-900 dark:hover:border-gray-300"
           href="https://open.spotify.com/user/_mujdat"
           >Spotify</a
         >, so here you'll will find my playlists, recently played and saved

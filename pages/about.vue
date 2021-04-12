@@ -4,7 +4,10 @@
       <p>
         Hello there!<span class="mx-2">👋🏻</span> My name is Müjdat Korkmaz, I'm
         a {{ currentAge }} year a Front-End Developer and I currently work at
-        <a class="text-[#f7a823] hover:underline" href="https://phmu.de">
+        <a
+          class="text-[#f7a823] transition duration-300 border-b border-transparent hover:border-[#f7a823]"
+          href="https://phmu.de"
+        >
           PHMU</a
         >
         based in Dresden, Germany.
@@ -27,7 +30,7 @@
     <intro-text title="Contact">
       You can reach out to me via DM on
       <a
-        class="text-[#1da1f2] hover:underline"
+        class="text-[#1da1f2] transition duration-300 border-b border-transparent hover:border-[#1da1f2]"
         href="https://twitter.com/mujdatkorkmaz"
       >
         Twitter</a
@@ -35,7 +38,7 @@
       but if you want to talk to me about something more elaborate, you can send
       me an email to
       <a
-        class="text-gray-900 dark:text-gray-300 hover:underline"
+        class="text-gray-900 dark:text-gray-300 transition duration-300 border-b border-transparent hover:border-gray-900 dark:hover:border-gray-300"
         href="mailto:me@mujd%2Eat"
         >me@mujd.at</a
       >
