@@ -32,8 +32,8 @@ exports.handler = async (event, context) => {
     .catch((err) => {
       console.error(err)
     })
-  const savedTracksEndpoint = `https://api.spotify.com/v1/me/tracks?limit=12`
-  return fetch(`${savedTracksEndpoint}`, {
+  const recentlySavedTracksEndpoint = `https://api.spotify.com/v1/me/tracks?limit=12`
+  return fetch(`${recentlySavedTracksEndpoint}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${accessToken}`,
