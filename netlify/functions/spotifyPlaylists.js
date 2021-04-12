@@ -5,10 +5,10 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 exports.handler = async (event, context) => {
-  const refreshToken = process.env.VITE_SPOTIFY_REFRESH_TOKEN
+  const refreshToken = process.env.VITE_SPOTIFY_API_REFRESH_TOKEN
 
   const auth = Buffer.from(
-    `${process.env.VITE_SPOTIFY_CLIENT_ID}:${process.env.VITE_SPOTIFY_CLIENT_SECRET}`
+    `${process.env.VITE_SPOTIFY_API_CLIENT_ID}:${process.env.VITE_SPOTIFY_API_CLIENT_SECRET}`
   ).toString('base64')
 
   const tokenEndpoint = `https://accounts.spotify.com/api/token`

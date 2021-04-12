@@ -10,7 +10,7 @@ exports.handler = async function (event, context) {
   }
   try {
     const response = await fetch(
-      `${process.env.VITE_UNSPLASH_API_URL_PHOTOS}?per_page=12&stats=true`,
+      `${process.env.VITE_UNSPLASH_API_BASE_URL_PHOTOS}?per_page=12&stats=true`,
       {
         headers,
       }
