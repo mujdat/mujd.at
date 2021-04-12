@@ -28,7 +28,7 @@
           <div v-for="item in photos" :key="item.id" class="inline-block mb-5">
             <div class="flex flex-col space-y-1 text-sm">
               <div class="mb-2">
-                <a :href="item.link" target="_blank"
+                <a :href="item.link"
                   ><img
                     class="transition duration-300 hover:opacity-75"
                     :src="item.src"
@@ -76,7 +76,7 @@
           <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
             <div class="flex flex-col space-y-1 text-sm">
               <div class="mb-2">
-                <a :href="item.link" target="_blank"
+                <a :href="item.link"
                   ><img
                     class="transition duration-300 hover:opacity-75"
                     :src="item.src"
@@ -97,10 +97,7 @@
               </p>
               <p class="text-gray-900 dark:text-gray-300">
                 by
-                <a
-                  :href="item.user.link"
-                  target="_blank"
-                  class="hover:underline"
+                <a :href="item.user.link" class="hover:underline"
                   ><span>{{ item.user.name }}</span></a
                 >
               </p>
@@ -114,7 +111,7 @@
           </div>
         </div>
         <div v-if="!likesLoading" class="mx-auto text-center">
-          <a href="https://unsplash.com/@_mujdat/likes" target="_blank">
+          <a href="https://unsplash.com/@_mujdat/likes">
             <btn>See all likes</btn>
           </a>
         </div>

@@ -18,7 +18,7 @@
           :key="item.uuid"
           class="relative flex flex-col justify-between"
         >
-          <a :href="item.url" target="_blank">
+          <a :href="item.url">
             <div id="itemImageNameWrapper">
               <div
                 id="itemImageWrapper"
@@ -50,7 +50,7 @@
             class="block text-sm font-medium text-gray-700 dark:text-gray-400"
           >
             <span v-for="(artist, index) in item.artists" :key="artist.uuid">
-              <a :href="artist.url" target="_blank" class="hover:underline">{{
+              <a :href="artist.url" class="hover:underline">{{
                 artist.name
               }}</a>
               <span
