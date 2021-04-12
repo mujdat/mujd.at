@@ -99,7 +99,8 @@ export const actions = {
               recentlyPlayedTracks.map((item) => [item.id, item])
             ).values(),
           ]
-          commit('SET_RECENTLY_PLAYED_TRACKS', uniqueTracks)
+          const mostRecentlyPlayedTracks = uniqueTracks.slice(0, 3)
+          commit('SET_RECENTLY_PLAYED_TRACKS', mostRecentlyPlayedTracks)
           commit('SET_RECENTLY_PLAYED_TRACKS_LOADING', false)
         }
       }
