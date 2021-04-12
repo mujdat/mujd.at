@@ -23,7 +23,7 @@
         couple years into my studies I decided to drop out and pursue a career
         as a web developer. During my studies and the transitional period to
         becoming a developer I had worked in different fields such as
-        communication, customer service and retail but finally in May 2019, I
+        communication, customer service and retail but finally in May 2020, I
         found my dream job as a Front-End Developer at PHMU!
       </p>
     </intro-text>
