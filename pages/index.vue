@@ -4,7 +4,7 @@
       <p>
         I'm a Front-End Developer, I work at
         <a
-          class="text-[#f7a823] transition duration-300 border-b border-transparent hover:border-[#f7a823]"
+          class="text-[#f7a823] pb-1 transition duration-300 border-b-2 border-transparent hover:border-[#f7a823]"
           href="https://phmu.de"
         >
           PHMU</a

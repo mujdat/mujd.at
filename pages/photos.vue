@@ -7,7 +7,7 @@
         you'll find some photos I was able to capture, my unsplash likes &amp;
         collections. The ones that I can't upload there, are usually on my
         <a
-          class="text-gray-900 dark:text-gray-300 hover:underline"
+          class="text-gray-900 dark:text-gray-300 transition duration-300 pb-1 border-b-2 border-transparent hover:border-gray-900 dark:hover:border-gray-300"
           href="https://instagram.com/mujdat"
           >Instagram</a
         >.
