@@ -161,7 +161,11 @@ export default Vue.extend({
   },
   computed: {
     systemColorPref() {
-      return this.$colorMode.value
+      if (this.$colorMode) {
+        return this.$colorMode.value
+      } else {
+        return null
+      }
     },
   },
   watch: {
@@ -174,7 +178,10 @@ export default Vue.extend({
     },
   },
   created() {
-    this.$colorMode.preference = 'system'
+    console.log(this.systemColorPref)
+    if (this.$colorMode) {
+      this.$colorMode.preference = 'system'
+    }
     if (
       this.systemColorPref === 'dark' &&
       this.$colorMode.preference === 'system'
