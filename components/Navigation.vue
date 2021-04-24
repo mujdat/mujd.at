@@ -178,7 +178,6 @@ export default Vue.extend({
     },
   },
   created() {
-    console.log(this.systemColorPref)
     if (this.$colorMode) {
       this.$colorMode.preference = 'system'
     }
