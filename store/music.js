@@ -5,6 +5,9 @@ export const state = () => ({
   playlistsLoading: false,
   recentlyPlayedTracksLoading: false,
   recentlySavedTracksLoading: false,
+  spotifyIconGreen: '/Spotify_Icon_CMYK_Green.png',
+  spotifyIconBlack: '/Spotify_Icon_CMYK_Black.png',
+  spotifyIconWhite: '/Spotify_Icon_CMYK_White.png',
   error: null,
 })
 
@@ -33,7 +36,7 @@ export const mutations = {
 }
 
 export const actions = {
-  getPlaylists({ commit }) {
+  getPlaylists({ commit, state }) {
     commit('SET_PLAYLISTS_LOADING', true)
     try {
       const getPlaylists = async () => {
@@ -45,7 +48,7 @@ export const actions = {
               id: item.id,
               name: item.name,
               description: item.description,
-              img: item.images[1].url,
+              img: item.images[1] ? item.images[1].url : state.spotifyIconGreen,
               url: item.external_urls.spotify,
             }
           })
@@ -59,7 +62,7 @@ export const actions = {
       commit('SET_PLAYLISTS_LOADING', false)
     }
   },
-  getRecentlyPlayedTracks({ commit }) {
+  getRecentlyPlayedTracks({ commit, state }) {
     commit('SET_RECENTLY_PLAYED_TRACKS_LOADING', true)
     try {
       const getRecentlyPlayedTracks = async () => {
@@ -82,7 +85,9 @@ export const actions = {
               id: item.track.id,
               uuid: this._vm.$uuid.v4(),
               url: item.track.external_urls.spotify,
-              img: item.track.album.images[1].url,
+              img: item.track.album.images[1]
+                ? item.track.album.images[1].url
+                : state.spotifyIconGreen,
               artists: artistsArray,
               preview_url: item.track.preview_url,
               demo: {
@@ -99,7 +104,7 @@ export const actions = {
               recentlyPlayedTracks.map((item) => [item.id, item])
             ).values(),
           ]
-          const mostRecentlyPlayedTracks = uniqueTracks.slice(0, 3)
+          const mostRecentlyPlayedTracks = uniqueTracks.slice(0, 4)
           commit('SET_RECENTLY_PLAYED_TRACKS', mostRecentlyPlayedTracks)
           commit('SET_RECENTLY_PLAYED_TRACKS_LOADING', false)
         }
@@ -110,7 +115,7 @@ export const actions = {
       commit('SET_RECENTLY_PLAYED_TRACKS_LOADING', false)
     }
   },
-  getRecentlySavedTracks({ commit }) {
+  getRecentlySavedTracks({ commit, state }) {
     commit('SET_RECENTLY_SAVED_TRACKS_LOADING', true)
     try {
       const getRecentlySavedTracks = async () => {
@@ -133,7 +138,9 @@ export const actions = {
               id: item.track.id,
               uuid: this._vm.$uuid.v4(),
               url: item.track.external_urls.spotify,
-              img: item.track.album.images[1].url,
+              img: item.track.album.images[1]
+                ? item.track.album.images[1].url
+                : state.spotifyIconGreen,
               artists: artistsArray,
               preview_url: item.track.preview_url,
               demo: {
