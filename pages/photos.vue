@@ -140,7 +140,7 @@ export default Vue.extend({
       return this.$store.state.photos.likesLoading
     },
   },
-  mounted() {
+  created() {
     this.$store.dispatch('photos/getPhotos')
     this.$store.dispatch('photos/getLikes')
   },

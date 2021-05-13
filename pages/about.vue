@@ -44,23 +44,27 @@
     </intro-text>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import {
+  defineComponent,
+  useMeta,
+  useStore,
+  computed,
+} from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'AboutPage',
-  head() {
-    return {
-      title: this.aboutTitle,
-    }
-  },
-  computed: {
-    aboutTitle() {
-      return this.$store.state.meta.about.title
-    },
-    currentAge() {
+  setup() {
+    const store: any = useStore()
+    useMeta({ title: store.state.meta.about.title })
+    const currentAge = computed(() => {
       const currentYear = new Date().getFullYear()
       const birthYear = 1992
       return currentYear - birthYear
-    },
+    })
+    return {
+      currentAge,
+    }
   },
-}
+  head: {},
+})
 </script>
