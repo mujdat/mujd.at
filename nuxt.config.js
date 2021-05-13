@@ -56,11 +56,6 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
-  // Tailwind Just-In-Time: https://tailwindcss.nuxtjs.org/setup/#tailwind-just-in-time
-  tailwindcss: {
-    jit: true,
-  },
-
   // Nuxt Color Mode: https://color-mode.nuxtjs.org/
   colorMode: {
     classSuffix: '',
@@ -80,12 +75,13 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://color-mode.nuxtjs.org/
     '@nuxtjs/color-mode',
-    // https://vite.nuxtjs.org/
-    'nuxt-vite',
     // https://www.npmjs.com/package/@nuxt-hero-icons/outline
     '@nuxt-hero-icons/outline/nuxt',
     // https://www.npmjs.com/package/@nuxt-hero-icons/solid
     '@nuxt-hero-icons/solid/nuxt',
+    // https://vite.nuxtjs.org/
+    // 'nuxt-vite',
+    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
