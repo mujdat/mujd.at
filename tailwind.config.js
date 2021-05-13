@@ -11,16 +11,5 @@ module.exports = {
       black: colors.black,
     },
   },
-  variants: {
-    backgroundColor: [
-      'dark',
-      'dark-hover',
-      'dark-group-hover',
-      'dark-even',
-      'dark-odd',
-    ],
-    borderColor: ['dark', 'dark-focus', 'dark-focus-within'],
-    textColor: ['dark', 'dark-hover', 'dark-active'],
-  },
   plugins: [require('@tailwindcss/aspect-ratio')],
 }
