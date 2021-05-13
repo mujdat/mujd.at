@@ -16,7 +16,8 @@
         <li
           v-for="item in items"
           :key="item.uuid"
-          class="relative flex flex-col justify-between"
+          class="relative flex flex-col"
+          :class="playlists ? 'justify-start' : 'justify-between'"
         >
           <a :href="item.url">
             <div id="itemImageNameWrapper">
