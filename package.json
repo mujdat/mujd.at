@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
-    "@nuxtjs/composition-api": "^0.23.4",
+    "@nuxtjs/composition-api": "^0.24.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "core-js": "^3.12.1",
     "global": "^4.4.0",

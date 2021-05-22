@@ -69,19 +69,26 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://vite.nuxtjs.org/
+    'nuxt-vite',
+
+    // https://composition-api.nuxtjs.org/
+    '@nuxtjs/composition-api/module',
+
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+
     // https://color-mode.nuxtjs.org/
     '@nuxtjs/color-mode',
+
     // https://www.npmjs.com/package/@nuxt-hero-icons/outline
     '@nuxt-hero-icons/outline/nuxt',
+
     // https://www.npmjs.com/package/@nuxt-hero-icons/solid
     '@nuxt-hero-icons/solid/nuxt',
-    // https://vite.nuxtjs.org/
-    // 'nuxt-vite',
-    '@nuxtjs/composition-api/module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
