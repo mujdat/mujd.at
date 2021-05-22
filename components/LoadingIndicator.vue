@@ -1,6 +1,13 @@
 <template>
   <div
-    class="flex flex-row items-center justify-center my-44 text-primary-900 dark:text-primary-400"
+    class="
+      flex flex-row
+      items-center
+      justify-center
+      my-44
+      text-primary-900
+      dark:text-primary-400
+    "
   >
     <svg
       class="animate-spin h-12 w-12"

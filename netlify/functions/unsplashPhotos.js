@@ -8,6 +8,7 @@ exports.handler = async function (event, context) {
     Accept: 'application/json',
     Authorization: `Client-ID ${process.env.VITE_UNSPLASH_API_KEY}`,
   }
+
   try {
     const response = await fetch(
       `${process.env.VITE_UNSPLASH_API_BASE_URL_PHOTOS}?per_page=12&stats=true`,
@@ -15,9 +16,11 @@ exports.handler = async function (event, context) {
         headers,
       }
     )
+
     if (!response.ok) {
       return { statusCode: response.status, body: response.statusText }
     }
+
     const data = await response.json()
 
     return {

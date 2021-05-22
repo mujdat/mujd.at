@@ -32,7 +32,9 @@ exports.handler = async (event, context) => {
     .catch((err) => {
       console.error(err)
     })
+
   const recentlyPlayedEndpoint = `https://api.spotify.com/v1/me/player/recently-played`
+
   return fetch(`${recentlyPlayedEndpoint}`, {
     method: 'GET',
     headers: {

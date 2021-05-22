@@ -2,7 +2,17 @@
   <div class="relative bg-transparent z-50">
     <div class="mx-auto">
       <div
-        class="flex justify-between items-center border-b-2 border-gray-100 dark:border-gray-800 py-6 sm:space-x-10 px-2 sm:px-0"
+        class="
+          flex
+          justify-between
+          items-center
+          border-b-2 border-gray-100
+          dark:border-gray-800
+          py-6
+          sm:space-x-10
+          px-2
+          sm:px-0
+        "
       >
         <avatar resolution="desktop"></avatar>
         <div class="sm:hidden flex items-center">
@@ -13,7 +23,23 @@
           ></theme-toggler>
           <button
             type="button"
-            class="bg-gray-100 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-200 dark:bg-gray-600 dark:hover:bg-gray-700 dark:text-gray-300 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            class="
+              bg-gray-100
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              hover:bg-gray-200
+              dark:bg-gray-600
+              dark:hover:bg-gray-700
+              dark:text-gray-300
+              dark:hover:text-gray-400
+              focus:outline-none
+              focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+            "
             aria-expanded="false"
             @click="mobileMenu = true"
           >
@@ -40,7 +66,19 @@
             v-for="item in menuItems"
             :key="item.name"
             :to="item.to"
-            class="transition duration-300 text-base font-medium text-gray-900 dark:text-gray-300 hover:text-primary-900 hover:border-primary-900 dark:hover:text-primary-400 dark:hover:border-primary-400 border-b-2 border-transparent"
+            class="
+              transition
+              duration-300
+              text-base
+              font-medium
+              text-gray-900
+              dark:text-gray-300
+              hover:text-primary-900
+              hover:border-primary-900
+              dark:hover:text-primary-400
+              dark:hover:border-primary-400
+              border-b-2 border-transparent
+            "
           >
             {{ item.name }}
           </nuxt-link>
@@ -63,17 +101,48 @@
     >
       <div
         v-if="mobileMenu"
-        class="absolute top-3.5 inset-x-0 pt-2 transition transform origin-top-right sm:hidden"
+        class="
+          absolute
+          top-3.5
+          inset-x-0
+          pt-2
+          transition
+          transform
+          origin-top-right
+          sm:hidden
+        "
       >
         <div
-          class="rounded-lg shadow-none bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-10 dark:ring-opacity-20 divide-y-2 divide-gray-50"
+          class="
+            rounded-lg
+            shadow-none
+            bg-white
+            dark:bg-gray-800
+            ring-1 ring-black ring-opacity-10
+            dark:ring-opacity-20
+            divide-y-2 divide-gray-50
+          "
         >
           <div class="pb-8 pt-3 px-5">
             <div class="flex items-center justify-between">
               <avatar class="mt-2"></avatar>
               <button
                 type="button"
-                class="bg-gray-100 dark:bg-gray-600 dark:hover:bg-gray-700 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+                class="
+                  bg-gray-100
+                  dark:bg-gray-600
+                  dark:hover:bg-gray-700
+                  rounded-md
+                  p-2
+                  inline-flex
+                  items-center
+                  justify-center
+                  text-gray-400
+                  hover:text-gray-500
+                  hover:bg-gray-200
+                  focus:outline-none
+                  focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+                "
                 @click="mobileMenu = false"
               >
                 <span class="sr-only">Close menu</span>
@@ -100,7 +169,23 @@
                   v-for="item in menuItems"
                   :key="item.name"
                   :to="item.to"
-                  class="transition duration-300 flex items-center -m-3 py-3 text-base font-medium text-gray-500 dark:text-gray-300 border-b-2 border-transparent hover:text-primary-900 dark:hover:text-primary-400 hover:border-b-2 hover:border-primary-900 dark:hover:border-primary-400"
+                  class="
+                    transition
+                    duration-300
+                    flex
+                    items-center
+                    -m-3
+                    py-3
+                    text-base
+                    font-medium
+                    text-gray-500
+                    dark:text-gray-300
+                    border-b-2 border-transparent
+                    hover:text-primary-900
+                    dark:hover:text-primary-400
+                    hover:border-b-2 hover:border-primary-900
+                    dark:hover:border-primary-400
+                  "
                 >
                   <outline-home-icon
                     v-if="item.name === 'Home'"

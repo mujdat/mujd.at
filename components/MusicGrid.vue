@@ -1,7 +1,14 @@
 <template>
   <div>
     <h3
-      class="text-2xl mb-6 tracking-tight font-extrabold text-gray-900 dark:text-gray-300"
+      class="
+        text-2xl
+        mb-6
+        tracking-tight
+        font-extrabold
+        text-gray-900
+        dark:text-gray-300
+      "
     >
       {{ title }}
     </h3>
@@ -23,7 +30,16 @@
             <div id="itemImageNameWrapper">
               <div
                 id="itemImageWrapper"
-                class="focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500 group block w-full aspect-w-10 aspect-h-10 overflow-hidden"
+                class="
+                  focus-within:ring-2
+                  focus-within:ring-offset-2
+                  focus-within:ring-primary-500
+                  group
+                  block
+                  w-full
+                  aspect-w-10 aspect-h-10
+                  overflow-hidden
+                "
               >
                 <img
                   id="itemImage"
@@ -34,7 +50,14 @@
               </div>
               <p
                 id="itemName"
-                class="mt-2 block text-sm font-medium text-gray-900 dark:text-gray-300"
+                class="
+                  mt-2
+                  block
+                  text-sm
+                  font-medium
+                  text-gray-900
+                  dark:text-gray-300
+                "
               >
                 {{ item.name }}
               </p>
@@ -66,7 +89,15 @@
           <div v-if="!playlists">
             <div v-if="item.preview_url !== null">
               <button
-                class="border p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1db954] text-sm mt-2"
+                class="
+                  border
+                  p-2
+                  rounded-full
+                  focus:outline-none
+                  focus:ring-2 focus:ring-offset-2 focus:ring-[#1db954]
+                  text-sm
+                  mt-2
+                "
                 :class="
                   previewItem &&
                   previewItem.isPlaying &&
@@ -104,7 +135,14 @@
             </div>
             <div
               v-else
-              class="py-2 mt-2 text-sm pointer-events-none text-gray-400 dark:text-gray-500"
+              class="
+                py-2
+                mt-2
+                text-sm
+                pointer-events-none
+                text-gray-400
+                dark:text-gray-500
+              "
             >
               Preview not available
             </div>

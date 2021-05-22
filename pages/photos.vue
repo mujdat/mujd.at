@@ -7,7 +7,16 @@
         you'll find some photos I was able to capture, my unsplash likes &amp;
         collections. The ones that I can't upload there, are usually on my
         <a
-          class="text-gray-900 dark:text-gray-300 transition duration-300 pb-1 border-b-2 border-transparent hover:border-gray-900 dark:hover:border-gray-300"
+          class="
+            text-gray-900
+            dark:text-gray-300
+            transition
+            duration-300
+            pb-1
+            border-b-2 border-transparent
+            hover:border-gray-900
+            dark:hover:border-gray-300
+          "
           href="https://instagram.com/mujdat"
           >Instagram</a
         >.
@@ -17,7 +26,14 @@
     <div class="space-y-16">
       <div>
         <h3
-          class="text-2xl mb-6 tracking-tight font-extrabold text-gray-900 dark:text-gray-300"
+          class="
+            text-2xl
+            mb-6
+            tracking-tight
+            font-extrabold
+            text-gray-900
+            dark:text-gray-300
+          "
         >
           My Photos
         </h3>
@@ -48,7 +64,14 @@
                 }}
               </p>
               <p
-                class="text-gray-700 dark:text-gray-400 font-medium text-sm flex flex-row items-center"
+                class="
+                  text-gray-700
+                  dark:text-gray-400
+                  font-medium
+                  text-sm
+                  flex flex-row
+                  items-center
+                "
               >
                 <span class="flex flex-row items-center mr-4">
                   <outline-heart-icon class="h-4 w-4 mr-1"></outline-heart-icon>
@@ -65,7 +88,14 @@
       </div>
       <div>
         <h3
-          class="text-2xl mb-6 tracking-tight font-extrabold text-gray-900 dark:text-gray-300"
+          class="
+            text-2xl
+            mb-6
+            tracking-tight
+            font-extrabold
+            text-gray-900
+            dark:text-gray-300
+          "
         >
           Likes
         </h3>
@@ -102,7 +132,14 @@
                 >
               </p>
               <p
-                class="text-gray-700 dark:text-gray-400 font-medium text-sm flex flex-row items-center"
+                class="
+                  text-gray-700
+                  dark:text-gray-400
+                  font-medium
+                  text-sm
+                  flex flex-row
+                  items-center
+                "
               >
                 <outline-heart-icon class="h-4 w-4 mr-1 0"></outline-heart-icon>
                 {{ item.likes ? item.likes : 0 }}

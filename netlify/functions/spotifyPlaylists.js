@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 const fetch = require('node-fetch')
 const dotenv = require('dotenv')
 dotenv.config()
@@ -35,6 +34,7 @@ exports.handler = async (event, context) => {
     })
 
   const playlistsEndpoint = `https://api.spotify.com/v1/me/playlists`
+
   return fetch(`${playlistsEndpoint}`, {
     method: 'GET',
     headers: {
