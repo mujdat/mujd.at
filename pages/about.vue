@@ -74,10 +74,13 @@ import {
   useStore,
   computed,
 } from '@nuxtjs/composition-api'
+
+import { RootState } from 'store'
+
 export default defineComponent({
   name: 'AboutPage',
   setup() {
-    const store: any = useStore()
+    const store = useStore<RootState>()
     useMeta({ title: store.state.meta.about.title })
     const currentAge = computed(() => {
       const currentYear = new Date().getFullYear()

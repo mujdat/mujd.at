@@ -1,3 +1,13 @@
+interface MetaObject {
+  title: string
+}
+
+export interface MetaState {
+  about: MetaObject
+  music: MetaObject
+  photos: MetaObject
+}
+
 export const state = () => ({
   about: {
     title: `Müjdat Korkmaz | About | Front-End Developer based in Dresden, Germany.`,
