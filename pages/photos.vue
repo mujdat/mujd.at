@@ -151,35 +151,43 @@
     </div>
   </div>
 </template>
-<script>
-import Vue from 'vue'
-export default Vue.extend({
+<script lang="ts">
+import {
+  defineComponent,
+  useStore,
+  useMeta,
+  computed,
+} from '@nuxtjs/composition-api'
+import { RootState } from 'store'
+
+export default defineComponent({
   name: 'PhotosPage',
-  head() {
+  setup() {
+    const store = useStore<RootState>()
+    useMeta({ title: store.state.meta.about.title })
+    store.dispatch('photos/getPhotos')
+    store.dispatch('photos/getLikes')
+
+    const photos = computed(() => {
+      return store.state.photos.photos
+    })
+    const likes = computed(() => {
+      return store.state.photos.likes
+    })
+    const photosLoading = computed(() => {
+      return store.state.photos.photosLoading
+    })
+    const likesLoading = computed(() => {
+      return store.state.photos.likesLoading
+    })
+
     return {
-      title: this.photosTitle,
+      photos,
+      likes,
+      photosLoading,
+      likesLoading,
     }
   },
-  computed: {
-    photosTitle() {
-      return this.$store.state.meta.photos.title
-    },
-    photos() {
-      return this.$store.state.photos.photos
-    },
-    likes() {
-      return this.$store.state.photos.likes
-    },
-    photosLoading() {
-      return this.$store.state.photos.photosLoading
-    },
-    likesLoading() {
-      return this.$store.state.photos.likesLoading
-    },
-  },
-  created() {
-    this.$store.dispatch('photos/getPhotos')
-    this.$store.dispatch('photos/getLikes')
-  },
+  head: {},
 })
 </script>

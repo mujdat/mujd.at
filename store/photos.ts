@@ -1,12 +1,74 @@
-export const state = () => ({
+import { ActionTree, MutationTree } from 'vuex'
+
+export interface PhotosState {
+  photos: object[] | null
+  likes: object[] | null
+  photosLoading: boolean
+  likesLoading: boolean
+  error: boolean
+}
+
+interface PhotosItem {
+  id: string
+  links: {
+    html: string
+  }
+  urls: {
+    html: string
+    small: string
+  }
+  likes: number
+  description: string
+  // eslint-disable-next-line
+  alt_description: string
+  statistics: {
+    views: {
+      total: number
+    }
+  }
+}
+
+interface LikesItem {
+  id: string
+  links: {
+    html: string
+  }
+  urls: {
+    html: string
+    small: string
+  }
+  likes: number
+  description: string
+  // eslint-disable-next-line
+  alt_description: string
+  statistics: {
+    views: {
+      total: number
+    }
+  }
+  user: {
+    name: string
+    links: {
+      html: string
+    }
+  }
+}
+
+const defaultPhotosState: PhotosState = {
   photos: null,
   likes: null,
   photosLoading: false,
   likesLoading: false,
-  error: null,
+  error: false,
+}
+
+export const state = () => ({
+  ...defaultPhotosState,
 })
 
-export const mutations = {
+export type RootState = ReturnType<typeof state>
+
+export const mutations: MutationTree<RootState> = {
   SET_PHOTOS_LOADING(state, flag) {
     state.photosLoading = flag
   },
@@ -24,7 +86,7 @@ export const mutations = {
   },
 }
 
-export const actions = {
+export const actions: ActionTree<RootState, RootState> = {
   getPhotos({ commit }) {
     commit('SET_PHOTOS_LOADING', true)
     try {
@@ -32,7 +94,8 @@ export const actions = {
         const response = await fetch('/.netlify/functions/unsplashPhotos')
         if (response.ok) {
           const res = await response.json()
-          const photos = res.map((item) => {
+
+          const photos = res.map((item: PhotosItem) => {
             return {
               id: item.id,
               link: item.links.html,
@@ -62,7 +125,7 @@ export const actions = {
         const response = await fetch('/.netlify/functions/unsplashLikes')
         if (response.ok) {
           const res = await response.json()
-          const likes = res.map((item) => {
+          const likes = res.map((item: LikesItem) => {
             return {
               id: item.id,
               link: item.links.html,

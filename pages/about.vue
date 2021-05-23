@@ -82,11 +82,13 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     useMeta({ title: store.state.meta.about.title })
+
     const currentAge = computed(() => {
       const currentYear = new Date().getFullYear()
       const birthYear = 1992
       return currentYear - birthYear
     })
+
     return {
       currentAge,
     }
