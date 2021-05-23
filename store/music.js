@@ -41,7 +41,6 @@ export const actions = {
         const response = await fetch('/.netlify/functions/spotifyPlaylists')
         if (response.ok) {
           const res = await response.json()
-          console.log(res)
           const playlists = res.items.map((item) => {
             return {
               id: item.id,
