@@ -6,8 +6,6 @@ export const state = () => ({
   recentlyPlayedTracksLoading: false,
   recentlySavedTracksLoading: false,
   spotifyIconGreen: '/Spotify_Icon_CMYK_Green.png',
-  spotifyIconBlack: '/Spotify_Icon_CMYK_Black.png',
-  spotifyIconWhite: '/Spotify_Icon_CMYK_White.png',
   error: null,
 })
 
@@ -43,12 +41,13 @@ export const actions = {
         const response = await fetch('/.netlify/functions/spotifyPlaylists')
         if (response.ok) {
           const res = await response.json()
+          console.log(res)
           const playlists = res.items.map((item) => {
             return {
               id: item.id,
               name: item.name,
               description: item.description,
-              img: item.images[1] ? item.images[1].url : state.spotifyIconGreen,
+              img: item.images[0] ? item.images[0].url : state.spotifyIconGreen,
               url: item.external_urls.spotify,
             }
           })
