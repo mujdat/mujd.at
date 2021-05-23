@@ -28,24 +28,7 @@ interface PhotosItem {
   }
 }
 
-interface LikesItem {
-  id: string
-  links: {
-    html: string
-  }
-  urls: {
-    html: string
-    small: string
-  }
-  likes: number
-  description: string
-  // eslint-disable-next-line
-  alt_description: string
-  statistics: {
-    views: {
-      total: number
-    }
-  }
+interface LikesItem extends PhotosItem {
   user: {
     name: string
     links: {
