@@ -1,8 +1,8 @@
 import { ActionTree, MutationTree } from 'vuex'
 
 export interface PhotosState {
-  photos: object[] | null
-  likes: object[] | null
+  photos: [] | null
+  likes: [] | null
   photosLoading: boolean
   likesLoading: boolean
   error: boolean
@@ -19,7 +19,7 @@ interface PhotosItem {
   }
   likes: number
   description: string
-  // eslint-disable-next-line
+  // eslint-disable-next-line camelcase
   alt_description: string
   statistics: {
     views: {
