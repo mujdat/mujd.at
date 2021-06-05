@@ -19,7 +19,7 @@
           <theme-toggler
             class="mr-10"
             :is-toggled-on="isToggledOn"
-            @toggle="toggleTheme($event)"
+            @toggle="toggleTheme"
           ></theme-toggler>
           <button
             type="button"
@@ -85,7 +85,7 @@
           <theme-toggler
             class="-mt-1"
             :is-toggled-on="isToggledOn"
-            @toggle="toggleTheme($event)"
+            @toggle="toggleTheme"
           ></theme-toggler>
         </nav>
       </div>

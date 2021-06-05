@@ -39,8 +39,8 @@
       title="Recently Played Songs"
       :items="recentlyPlayedTracks"
       :preview-item="selectedTrack"
-      @play="playPreviewTrack($event)"
-      @pause="pausePreviewTrack($event)"
+      @play="playPreviewTrack"
+      @pause="pausePreviewTrack"
     ></music-grid>
     <music-grid
       class="mb-16"
@@ -48,88 +48,124 @@
       title="Recently Saved Songs"
       :items="recentlySavedTracks"
       :preview-item="selectedTrack"
-      @play="playPreviewTrack($event)"
-      @pause="pausePreviewTrack($event)"
+      @play="playPreviewTrack"
+      @pause="pausePreviewTrack"
     ></music-grid>
   </div>
 </template>
-<script>
+<script lang="ts">
+import {
+  defineComponent,
+  computed,
+  ref,
+  useStore,
+  useMeta,
+  useRouter,
+} from '@nuxtjs/composition-api'
+
+import { RootState } from 'store'
+// @ts-ignore
 import { cloneDeep } from 'lodash'
-export default {
-  name: 'MusicPage',
-  /* eslint-disable-next-line */
-  beforeRouteLeave(to, from, next) {
-    if (this.selectedTrack) {
-      this.selectedTrack.file.pause()
-    }
-    next()
-  },
-  data() {
-    return {
-      leavingRoute: false,
-      selectedTrack: null,
-    }
-  },
-  head() {
-    return {
-      title: this.musicTitle,
-    }
-  },
-  computed: {
-    musicTitle() {
-      return this.$store.state.meta.music.title
-    },
-    playlists() {
-      return this.$store.state.music.playlists
-    },
-    recentlyPlayedTracks() {
-      return this.$store.state.music.recentlyPlayedTracks
-    },
-    recentlySavedTracks() {
-      return this.$store.state.music.recentlySavedTracks
-    },
-    playlistsLoading() {
-      return this.$store.state.music.playlistsLoading
-    },
-    recentlyPlayedTracksLoading() {
-      return this.$store.state.music.recentlyPlayedTracksLoading
-    },
-    recentlySavedTracksLoading() {
-      return this.$store.state.music.recentlySavedTracksLoading
-    },
-  },
-  created() {
-    this.$store.dispatch('music/getRecentlyPlayedTracks')
-    this.$store.dispatch('music/getRecentlySavedTracks')
-    this.$store.dispatch('music/getPlaylists')
-  },
-  methods: {
-    playPreviewTrack(previewTrack) {
-      const clonedTrack = cloneDeep(previewTrack)
-      if (this.selectedTrack === null) {
-        this.selectedTrack = clonedTrack
-        this.selectedTrack.file.play()
-        this.selectedTrack.isPlaying = true
-        this.selectedTrack.file.loop = true
-      } else if (
-        this.selectedTrack &&
-        this.selectedTrack.id !== previewTrack.id
-      ) {
-        this.selectedTrack.file.pause()
-        this.selectedTrack.isPlaying = false
-        this.selectedTrack = clonedTrack
-        this.selectedTrack.file.play()
-        this.selectedTrack.isPlaying = true
-        this.selectedTrack.file.loop = true
-      }
-    },
-    pausePreviewTrack(previewTrack) {
-      const clonedTrack = cloneDeep(previewTrack)
-      this.selectedTrack = clonedTrack
-      this.selectedTrack.file.pause()
-      this.selectedTrack.isPlaying = false
-      this.selectedTrack = null
-    },
-  },
+
+interface SelectedPreviewTrack {
+  name: string
+  id: string
+  uuid: string
+  file: any
+  isPlaying: boolean
 }
+
+export default defineComponent({
+  name: 'MusicPage',
+  setup() {
+    const store = useStore<RootState>()
+    const router = useRouter()
+    const leavingRoute = ref(false)
+    const selectedTrack = ref<SelectedPreviewTrack | null>(null)
+
+    useMeta({ title: store.state.meta.about.title })
+
+    store.dispatch('music/getRecentlyPlayedTracks')
+    store.dispatch('music/getRecentlySavedTracks')
+    store.dispatch('music/getPlaylists')
+
+    const musicTitle = computed(() => {
+      return store.state.meta.music.title
+    })
+    const playlists = computed(() => {
+      return store.state.music.playlists
+    })
+    const recentlyPlayedTracks = computed(() => {
+      return store.state.music.recentlyPlayedTracks
+    })
+    const recentlySavedTracks = computed(() => {
+      return store.state.music.recentlySavedTracks
+    })
+    const playlistsLoading = computed(() => {
+      return store.state.music.playlistsLoading
+    })
+    const recentlyPlayedTracksLoading = computed(() => {
+      return store.state.music.recentlyPlayedTracksLoading
+    })
+    const recentlySavedTracksLoading = computed(() => {
+      return store.state.music.recentlySavedTracksLoading
+    })
+
+    const playPreviewTrack = (previewTrack: SelectedPreviewTrack) => {
+      const clonedTrack = cloneDeep(previewTrack)
+      if (selectedTrack.value === null) {
+        selectedTrack.value = clonedTrack
+        if (selectedTrack && selectedTrack.value) {
+          selectedTrack.value.file.play()
+          selectedTrack.value.isPlaying = true
+          selectedTrack.value.file.loop = true
+        }
+      } else if (
+        selectedTrack.value &&
+        selectedTrack.value.id !== previewTrack.id
+      ) {
+        selectedTrack.value.file.pause()
+        selectedTrack.value.isPlaying = false
+        selectedTrack.value = clonedTrack
+        if (selectedTrack && selectedTrack.value) {
+          selectedTrack.value.file.play()
+          selectedTrack.value.isPlaying = true
+          selectedTrack.value.file.loop = true
+        }
+      }
+    }
+    const pausePreviewTrack = (previewTrack: any) => {
+      const clonedTrack = cloneDeep(previewTrack)
+      selectedTrack.value = clonedTrack
+      if (selectedTrack && selectedTrack.value) {
+        selectedTrack.value.file.pause()
+        selectedTrack.value.isPlaying = false
+        selectedTrack.value = null
+      }
+    }
+
+    // eslint-disable-next-line
+    router.beforeEach((to, from, next) => {
+      if (selectedTrack && selectedTrack.value) {
+        selectedTrack.value.file.pause()
+      }
+      next()
+    })
+
+    return {
+      playPreviewTrack,
+      pausePreviewTrack,
+      musicTitle,
+      playlists,
+      recentlyPlayedTracks,
+      recentlySavedTracks,
+      playlistsLoading,
+      recentlyPlayedTracksLoading,
+      recentlySavedTracksLoading,
+      leavingRoute,
+      selectedTrack,
+    }
+  },
+  head: {},
+})
 </script>

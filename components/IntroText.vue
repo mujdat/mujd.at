@@ -25,8 +25,9 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+export default defineComponent({
   name: 'IntroText',
   props: {
     title: {
@@ -34,5 +35,5 @@ export default {
       default: 'A Default Title',
     },
   },
-}
+})
 </script>

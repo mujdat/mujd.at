@@ -153,8 +153,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({
   name: 'MusicGrid',
   props: {
     items: {
@@ -178,7 +180,7 @@ export default {
       default: () => null,
     },
   },
-}
+})
 </script>
 
 <style>
