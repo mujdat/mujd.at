@@ -3,7 +3,7 @@
     <intro-text title="About">
       <p>
         Hello there!<span class="mx-2">👋🏻</span> My name is Müjdat Korkmaz, I'm
-        a {{ currentAge }} year a Front-End Developer and I currently work at
+        a {{ currentAge }} year old Front-End Developer and I currently work at
         <a
           class="
             text-[#f7a823]
