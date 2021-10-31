@@ -70,7 +70,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://vite.nuxtjs.org/
-    // 'nuxt-vite',
+    'nuxt-vite',
 
     // https://composition-api.nuxtjs.org/
     '@nuxtjs/composition-api/module',
