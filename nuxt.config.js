@@ -95,7 +95,7 @@ export default {
   ],
 
   prismic: {
-    endpoint: 'https://mujdat.prismic.io/api/v2',
+    endpoint: process.env.VITE_PRISMIC_ENDPOINT,
     modern: true,
     preview: false,
   },
