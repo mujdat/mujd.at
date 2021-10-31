@@ -194,6 +194,10 @@
                     v-if="item.name === 'About'"
                     class="w-5 h-5"
                   />
+                  <outline-mail-icon
+                    v-if="item.name === 'Contact'"
+                    class="w-5 h-5"
+                  />
                   <outline-music-note-icon
                     v-if="item.name === 'Music'"
                     class="w-5 h-5"
@@ -226,21 +230,25 @@ export default Vue.extend({
       menuItems: [
         {
           name: 'Home',
-          to: '/',
+          to: '/'
         },
         {
           name: 'About',
-          to: '/about',
+          to: '/about'
         },
         {
           name: 'Music',
-          to: '/music',
+          to: '/music'
         },
         {
           name: 'Photos',
-          to: '/photos',
+          to: '/photos'
         },
-      ],
+        {
+          name: 'Contact',
+          to: '/contact'
+        }
+      ]
     }
   },
   computed: {
@@ -250,7 +258,7 @@ export default Vue.extend({
       } else {
         return null
       }
-    },
+    }
   },
   watch: {
     systemColorPref() {
@@ -259,7 +267,7 @@ export default Vue.extend({
       } else {
         this.isToggledOn = false
       }
-    },
+    }
   },
   created() {
     if (this.$colorMode) {
@@ -275,6 +283,13 @@ export default Vue.extend({
     }
   },
   methods: {
+    toggleMenu(action: string) {
+      if (action === 'open') {
+        this.mobileMenu = true
+      } else {
+        this.mobileMenu = false
+      }
+    },
     toggleTheme() {
       this.isToggledOn = !this.isToggledOn
       if (this.isToggledOn) {
@@ -282,8 +297,8 @@ export default Vue.extend({
       } else {
         this.$colorMode.preference = 'light'
       }
-    },
-  },
+    }
+  }
 })
 </script>
 <style lang="postcss">

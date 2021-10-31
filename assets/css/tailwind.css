@@ -17,3 +17,7 @@ html {
 .dark {
   @apply bg-gray-900;
 }
+
+.prose {
+  @apply max-w-none;
+}

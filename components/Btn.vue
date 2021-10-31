@@ -32,7 +32,7 @@ export default defineComponent({
   props: {
     size: {
       type: String,
-      default: 'md',
+      default: 'md'
     },
   },
 })

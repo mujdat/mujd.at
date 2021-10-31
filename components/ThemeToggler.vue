@@ -17,8 +17,7 @@
       transition-colors
       ease-in-out
       duration-200
-      focus:outline-none
-      focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+      focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
     "
     aria-pressed="false"
     @click="$emit('toggle', isToggledOn)"
@@ -93,8 +92,8 @@ export default defineComponent({
   props: {
     isToggledOn: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 })
 </script>

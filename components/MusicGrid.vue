@@ -1,21 +1,21 @@
 <template>
   <div>
-    <h3
-      class="
-        text-2xl
-        mb-6
-        tracking-tight
-        font-extrabold
-        text-gray-900
-        dark:text-gray-300
-      "
-    >
-      {{ title }}
-    </h3>
     <div v-if="loading">
       <loading-indicator></loading-indicator>
     </div>
     <div v-else>
+      <h3
+        class="
+          text-2xl
+          mb-6
+          tracking-tight
+          font-extrabold
+          text-gray-900
+          dark:text-gray-300
+        "
+      >
+        {{ title }}
+      </h3>
       <ul
         role="list"
         class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-6"
@@ -94,7 +94,9 @@
                   p-2
                   rounded-full
                   focus:outline-none
-                  focus:ring-2 focus:ring-offset-2 focus:ring-[#1db954]
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-[#1db954]
                   text-sm
                   mt-2
                 "
@@ -159,27 +161,28 @@ import { defineComponent } from '@nuxtjs/composition-api'
 export default defineComponent({
   name: 'MusicGrid',
   props: {
+    // TODO: Add Types
     items: {
-      type: Array,
-      default: () => null,
+      type: Array as any,
+      default: () => null
     },
     playlists: {
       type: Boolean,
-      default: false,
+      default: false
     },
     title: {
       type: String,
-      default: 'A Default Title',
+      default: 'A Default Title'
     },
     loading: {
       type: Boolean,
-      default: false,
+      default: false
     },
     previewItem: {
       type: Object,
-      default: () => null,
-    },
-  },
+      default: () => null
+    }
+  }
 })
 </script>
 

@@ -1,56 +1,55 @@
 <template>
   <div>
-    <intro-text title="Music">
-      <p>
-        One of my favorite things to do is to listen to music. Especially when I
-        work and focus on a task at hand. My favorite genre is electronic music
-        but I don't really have a spesific sub-genre. Most of the time I use
-        <a
+    <div>
+      <loading-indicator
+        v-if="pageLoading && pageLoading[0]"
+      ></loading-indicator>
+      <div v-else-if="page && page.length">
+        <h2
           class="
+            text-3xl
+            mb-6
+            tracking-light
+            font-extrabold
             text-gray-900
             dark:text-gray-300
-            pb-1
-            transition
-            duration-300
-            border-b-2 border-transparent
-            hover:border-gray-900
-            dark:hover:border-gray-300
           "
-          href="https://open.spotify.com/user/_mujdat"
-          >Spotify</a
-        >, so here you'll will find my playlists, recently played and saved
-        songs.
-      </p>
-      <p>
-        I also try to produce music as a hobby. I'm still learning but once I
-        have something to share, this would be the place to find it.
-      </p>
-    </intro-text>
-    <music-grid
-      class="mb-16"
-      :loading="playlistsLoading"
-      title="My Playlists"
-      :items="playlists"
-      playlists
-    ></music-grid>
-    <music-grid
-      class="mb-16"
-      :loading="recentlyPlayedTracksLoading"
-      title="Recently Played Songs"
-      :items="recentlyPlayedTracks"
-      :preview-item="selectedTrack"
-      @play="playPreviewTrack"
-      @pause="pausePreviewTrack"
-    ></music-grid>
-    <music-grid
-      class="mb-16"
-      :loading="recentlySavedTracksLoading"
-      title="Recently Saved Songs"
-      :items="recentlySavedTracks"
-      :preview-item="selectedTrack"
-      @play="playPreviewTrack"
-      @pause="pausePreviewTrack"
-    ></music-grid>
+        >
+          {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+        </h2>
+        <prismic-rich-text
+          class="prose dark:prose-dark"
+          :field="page[0].data.content"
+        />
+      </div>
+    </div>
+    <div class="mt-16">
+      <music-grid
+        class="mb-16"
+        :loading="playlistsLoading"
+        title="My Playlists"
+        :items="playlists"
+        playlists
+      ></music-grid>
+      <music-grid
+        class="mb-16"
+        :loading="recentlyPlayedTracksLoading"
+        title="Recently Played Songs"
+        :items="recentlyPlayedTracks"
+        :preview-item="selectedTrack"
+        @play="playPreviewTrack"
+        @pause="pausePreviewTrack"
+      ></music-grid>
+      <music-grid
+        class="mb-16"
+        :loading="recentlySavedTracksLoading"
+        title="Recently Saved Songs"
+        :items="recentlySavedTracks"
+        :preview-item="selectedTrack"
+        @play="playPreviewTrack"
+        @pause="pausePreviewTrack"
+      ></music-grid>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -60,12 +59,14 @@ import {
   ref,
   useStore,
   useMeta,
-  useRouter,
+  useRouter
 } from '@nuxtjs/composition-api'
 
 import { RootState } from 'store'
 // @ts-ignore
 import { cloneDeep } from 'lodash'
+
+import { usePrismicAPI } from 'nuxt-use-prismic-api'
 
 interface SelectedPreviewTrack {
   name: string
@@ -152,7 +153,16 @@ export default defineComponent({
       next()
     })
 
+    const { page, pageLoading } = usePrismicAPI({
+      data: 'page',
+      method: 'getByUID',
+      docType: 'page',
+      uid: 'music'
+    })
+
     return {
+      page,
+      pageLoading,
       playPreviewTrack,
       pausePreviewTrack,
       musicTitle,
@@ -163,9 +173,9 @@ export default defineComponent({
       recentlyPlayedTracksLoading,
       recentlySavedTracksLoading,
       leavingRoute,
-      selectedTrack,
+      selectedTrack
     }
   },
-  head: {},
+  head: {}
 })
 </script>

@@ -13,11 +13,17 @@ module.exports = {
     extend: {
       typography(theme) {
         return {
+          DEFAULT: {
+            css: {
+              p: { fontSize: '1.125rem' },
+            },
+          },
           dark: {
             css: {
               color: theme('colors.gray.300'),
               h2: { color: theme('colors.gray.200') },
               a: { color: theme('colors.gray.200') },
+              strong: { color: theme('colors.gray.200') },
             },
           },
         }

@@ -10,7 +10,7 @@ export default {
     title:
       'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany.',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'en'
     },
     meta: [
       // Global Meta Attrs
@@ -19,7 +19,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`,
+        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`
       },
 
       // Twitter Card
@@ -28,29 +28,29 @@ export default {
       {
         hid: 'twitter:url',
         name: 'twitter:url',
-        content: 'https://mujd.at',
+        content: 'https://mujd.at'
       },
       {
         hid: 'twitter:title',
         name: 'twitter:title',
         content:
-          'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany.',
+          'Müjdat Korkmaz | Home | Front-End Developer based in Dresden, Germany.'
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`,
+        content: `Hello! My name is Müjdat Korkmaz and I'm a Front-End Developer based in Dresden, Germany.`
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://mujd.at/twitter-card.png',
-      },
+        content: 'https://mujd.at/twitter-card.png'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
-    ],
+      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -58,11 +58,11 @@ export default {
 
   // Nuxt Color Mode: https://color-mode.nuxtjs.org/
   colorMode: {
-    classSuffix: '',
+    classSuffix: ''
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-uuid.js'],
+  plugins: ['~/plugins/vue-uuid.ts'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -70,7 +70,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://vite.nuxtjs.org/
-    'nuxt-vite',
+    // 'nuxt-vite',
 
     // https://composition-api.nuxtjs.org/
     '@nuxtjs/composition-api/module',
@@ -91,25 +91,25 @@ export default {
     '@nuxt-hero-icons/solid/nuxt',
 
     // https://prismic.nuxtjs.org
-    '@nuxtjs/prismic',
+    '@nuxtjs/prismic'
   ],
 
   // Prismic: https://prismic.nuxtjs.org
   prismic: {
     endpoint: process.env.VITE_PRISMIC_ENDPOINT,
     modern: true,
-    preview: false,
+    preview: false
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {}
 }

@@ -21,18 +21,19 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
 import { usePrismicAPI } from 'nuxt-use-prismic-api'
 
 export default defineComponent({
-  name: 'AboutPage',
+  name: 'ContactPage',
   setup() {
     const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
-      uid: 'about'
+      uid: 'contact'
     })
     return { page, pageLoading }
   },

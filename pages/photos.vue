@@ -1,46 +1,46 @@
 <template>
   <div>
-    <intro-text title="Photos">
-      <p>
-        I don't take many photos and when I do it's usually with my iPhone but
-        every now and then I have some good ones that I'd like to share. Here,
-        you'll find some photos I was able to capture, my unsplash likes &amp;
-        collections. The ones that I can't upload there, are usually on my
-        <a
+    <div>
+      <loading-indicator
+        v-if="pageLoading && pageLoading[0]"
+      ></loading-indicator>
+      <div v-else-if="page && page.length">
+        <h2
           class="
-            text-gray-900
-            dark:text-gray-300
-            transition
-            duration-300
-            pb-1
-            border-b-2 border-transparent
-            hover:border-gray-900
-            dark:hover:border-gray-300
-          "
-          href="https://instagram.com/mujdat"
-          >Instagram</a
-        >.
-      </p>
-    </intro-text>
-
-    <div class="space-y-16">
-      <div>
-        <h3
-          class="
-            text-2xl
+            text-3xl
             mb-6
-            tracking-tight
+            tracking-light
             font-extrabold
             text-gray-900
             dark:text-gray-300
           "
         >
-          My Photos
-        </h3>
+          {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+        </h2>
+        <prismic-rich-text
+          class="prose dark:prose-dark"
+          :field="page[0].data.content"
+        />
+      </div>
+    </div>
+    <div class="space-y-16 mt-16">
+      <div>
         <div v-if="photosLoading">
           <loading-indicator></loading-indicator>
         </div>
         <div v-else style="columns: 3 12.5rem; column-gap: 1.5rem">
+          <h3
+            class="
+              text-2xl
+              mb-6
+              tracking-tight
+              font-extrabold
+              text-gray-900
+              dark:text-gray-300
+            "
+          >
+            My Photos
+          </h3>
           <div v-for="item in photos" :key="item.id" class="inline-block mb-5">
             <div class="flex flex-col space-y-1 text-sm">
               <div class="mb-2">
@@ -87,22 +87,22 @@
         </div>
       </div>
       <div>
-        <h3
-          class="
-            text-2xl
-            mb-6
-            tracking-tight
-            font-extrabold
-            text-gray-900
-            dark:text-gray-300
-          "
-        >
-          Likes
-        </h3>
         <div v-if="likesLoading">
           <loading-indicator></loading-indicator>
         </div>
         <div v-else style="columns: 3 12.5rem; column-gap: 1.5rem">
+          <h3
+            class="
+              text-2xl
+              mb-6
+              tracking-tight
+              font-extrabold
+              text-gray-900
+              dark:text-gray-300
+            "
+          >
+            Likes
+          </h3>
           <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
             <div class="flex flex-col space-y-1 text-sm">
               <div class="mb-2">
@@ -156,8 +156,9 @@ import {
   defineComponent,
   useStore,
   useMeta,
-  computed,
+  computed
 } from '@nuxtjs/composition-api'
+import { usePrismicAPI } from 'nuxt-use-prismic-api'
 import { RootState } from 'store'
 
 export default defineComponent({
@@ -168,10 +169,13 @@ export default defineComponent({
     store.dispatch('photos/getPhotos')
     store.dispatch('photos/getLikes')
 
-    const photos = computed(() => {
+    // TODO: Add Types
+    const photos: any = computed(() => {
       return store.state.photos.photos
     })
-    const likes = computed(() => {
+
+    // TODO: Add Types
+    const likes: any = computed(() => {
       return store.state.photos.likes
     })
     const photosLoading = computed(() => {
@@ -181,13 +185,22 @@ export default defineComponent({
       return store.state.photos.likesLoading
     })
 
+    const { page, pageLoading } = usePrismicAPI({
+      data: 'page',
+      method: 'getByUID',
+      docType: 'page',
+      uid: 'photos'
+    })
+
     return {
+      page,
+      pageLoading,
       photos,
       likes,
       photosLoading,
-      likesLoading,
+      likesLoading
     }
   },
-  head: {},
+  head: {}
 })
 </script>

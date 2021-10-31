@@ -29,8 +29,8 @@ export default defineComponent({
   props: {
     resolution: {
       type: String,
-      default: 'desktop',
-    },
-  },
+      default: 'desktop'
+    }
+  }
 })
 </script>

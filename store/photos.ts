@@ -1,4 +1,4 @@
-import { ActionTree, MutationTree } from 'vuex'
+import type { ActionTree, MutationTree } from 'vuex'
 
 export interface PhotosState {
   photos: [] | null
@@ -46,7 +46,7 @@ const defaultPhotosState: PhotosState = {
 }
 
 export const state = () => ({
-  ...defaultPhotosState,
+  ...defaultPhotosState
 })
 
 export type RootState = ReturnType<typeof state>

@@ -1,4 +1,4 @@
-import { ActionTree, MutationTree } from 'vuex'
+import type { ActionTree, MutationTree } from 'vuex'
 
 export interface MusicState {
   playlists: [] | null

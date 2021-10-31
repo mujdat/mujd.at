@@ -1,25 +1,23 @@
 <template>
   <div>
     <loading-indicator v-if="pageLoading && pageLoading[0]"></loading-indicator>
-    <div v-else>
-      <div v-if="page && page.length">
-        <h2
-          class="
-            text-3xl
-            mb-6
-            tracking-light
-            font-extrabold
-            text-gray-900
-            dark:text-gray-300
-          "
-        >
-          Imprint
-        </h2>
-        <prismic-rich-text
-          class="prose dark:prose-dark"
-          :field="page[0].data.content"
-        />
-      </div>
+    <div v-else-if="page && page.length">
+      <h2
+        class="
+          text-3xl
+          mb-6
+          tracking-light
+          font-extrabold
+          text-gray-900
+          dark:text-gray-300
+        "
+      >
+        {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+      </h2>
+      <prismic-rich-text
+        class="prose dark:prose-dark"
+        :field="page[0].data.content"
+      />
     </div>
   </div>
 </template>
@@ -31,13 +29,13 @@ import { usePrismicAPI } from 'nuxt-use-prismic-api'
 export default defineComponent({
   name: 'ImprintPage',
   setup() {
-    const { page, pageLoading, pageError } = usePrismicAPI({
+    const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
-      uid: 'imprint',
+      uid: 'imprint'
     })
-    return { page, pageLoading, pageError }
-  },
+    return { page, pageLoading }
+  }
 })
 </script>
