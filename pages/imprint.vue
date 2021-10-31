@@ -31,13 +31,13 @@ import { usePrismicAPI } from 'nuxt-use-prismic-api'
 export default defineComponent({
   name: 'ImprintPage',
   setup() {
-    const { page, pageLoading } = usePrismicAPI({
+    const { page, pageLoading, pageError } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
       uid: 'imprint',
     })
-    return { page, pageLoading }
+    return { page, pageLoading, pageError }
   },
 })
 </script>

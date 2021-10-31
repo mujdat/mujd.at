@@ -12121,10 +12121,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-use-prismic-api@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/nuxt-use-prismic-api/-/nuxt-use-prismic-api-1.1.6.tgz#ce61c15696444c77e5ad5f99b89b6f7c3bcafd8c"
-  integrity sha512-JcXSfUF3NpbDEj4g9QQSi9mVWynAOH51gTgeebbT8C7lc8k3Mat9Bg1/zlUKom0Usdvzz7Gg9iBwvWT8P1ieJw==
+nuxt-use-prismic-api@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/nuxt-use-prismic-api/-/nuxt-use-prismic-api-1.1.8.tgz#23883f6a0c0ddcc0a9312438b3247f4a423ef2ea"
+  integrity sha512-988kpEes1Ni3gzCmclwhIELVUbNGgR6WFRiMlZh3X9OqKI0CRjE4h8QkEYa1XDhC44FSET3RQef8rFLnvpjUYQ==
 
 nuxt-vite@^0.1.0:
   version "0.1.3"
