@@ -31,14 +31,15 @@
               items-center
               justify-center
               text-gray-400
-              hover:text-gray-500
-              hover:bg-gray-200
+              hover:text-gray-500 hover:bg-gray-200
               dark:bg-gray-600
               dark:hover:bg-gray-700
               dark:text-gray-300
               dark:hover:text-gray-400
               focus:outline-none
-              focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+              focus:ring-2
+              focus:ring-offset-2
+              focus:ring-primary-500
             "
             aria-expanded="false"
             @click="mobileMenu = true"
@@ -73,10 +74,8 @@
               font-medium
               text-gray-900
               dark:text-gray-300
-              hover:text-primary-900
-              hover:border-primary-900
-              dark:hover:text-primary-400
-              dark:hover:border-primary-400
+              hover:text-primary-900 hover:border-primary-900
+              dark:hover:text-primary-400 dark:hover:border-primary-400
               border-b-2 border-transparent
             "
           >
@@ -130,18 +129,18 @@
                 type="button"
                 class="
                   bg-gray-100
-                  dark:bg-gray-600
-                  dark:hover:bg-gray-700
+                  dark:bg-gray-600 dark:hover:bg-gray-700
                   rounded-md
                   p-2
                   inline-flex
                   items-center
                   justify-center
                   text-gray-400
-                  hover:text-gray-500
-                  hover:bg-gray-200
+                  hover:text-gray-500 hover:bg-gray-200
                   focus:outline-none
-                  focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
+                  focus:ring-2
+                  focus:ring-offset-2
+                  focus:ring-primary-500
                 "
                 @click="mobileMenu = false"
               >

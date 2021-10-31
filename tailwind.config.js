@@ -1,7 +1,6 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
   mode: 'jit',
-  purge: [],
   darkMode: 'class',
   theme: {
     colors: {
@@ -11,6 +10,32 @@ module.exports = {
       gray: colors.gray,
       black: colors.black,
     },
+    extend: {
+      typography(theme) {
+        return {
+          dark: {
+            css: {
+              color: theme('colors.gray.300'),
+              h2: { color: theme('colors.gray.200') },
+              a: { color: theme('colors.gray.200') },
+            },
+          },
+        }
+      },
+    },
   },
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  variants: {
+    typography: ['dark'],
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+  purge: [
+    './components/**/*.vue',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.ts',
+    './nuxt.config.js',
+  ],
 }

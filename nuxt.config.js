@@ -89,7 +89,16 @@ export default {
 
     // https://www.npmjs.com/package/@nuxt-hero-icons/solid
     '@nuxt-hero-icons/solid/nuxt',
+
+    // https://prismic.nuxtjs.org
+    '@nuxtjs/prismic',
   ],
+
+  prismic: {
+    endpoint: 'https://mujdat.prismic.io/api/v2',
+    modern: true,
+    preview: false,
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

@@ -29,7 +29,8 @@
       "@types/node",
       "@nuxtjs/axios",
       "vite/client"
-    ]
+    ],
+    "typeRoots": ["./types/*"]
   },
   "exclude": [
     "node_modules",
