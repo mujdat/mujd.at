@@ -28,7 +28,7 @@
         <div v-if="photosLoading">
           <loading-indicator></loading-indicator>
         </div>
-        <div v-else style="columns: 3 12.5rem; column-gap: 1.5rem">
+        <div v-else>
           <h3
             class="
               text-2xl
@@ -41,47 +41,55 @@
           >
             My Photos
           </h3>
-          <div v-for="item in photos" :key="item.id" class="inline-block mb-5">
-            <div class="flex flex-col space-y-1 text-sm">
-              <div class="mb-2">
-                <a :href="item.link"
-                  ><img
-                    class="transition duration-300 hover:opacity-75"
-                    :src="item.src"
-                    :alt="item.alt"
-                /></a>
+          <div style="columns: 3 12.5rem; column-gap: 1.5rem">
+            <div
+              v-for="item in photos"
+              :key="item.id"
+              class="inline-block mb-5"
+            >
+              <div class="flex flex-col space-y-1 text-sm">
+                <div class="mb-2">
+                  <a :href="item.link"
+                    ><img
+                      class="transition duration-300 hover:opacity-75"
+                      :src="item.src"
+                      :alt="item.alt"
+                  /></a>
+                </div>
+                <p
+                  class="text-gray-700 dark:text-gray-400"
+                  :class="
+                    item.description && item.description.length ? '' : 'italic'
+                  "
+                >
+                  {{
+                    item.description
+                      ? item.description
+                      : 'Description not available'
+                  }}
+                </p>
+                <p
+                  class="
+                    text-gray-700
+                    dark:text-gray-400
+                    font-medium
+                    text-sm
+                    flex flex-row
+                    items-center
+                  "
+                >
+                  <span class="flex flex-row items-center mr-4">
+                    <outline-heart-icon
+                      class="h-4 w-4 mr-1"
+                    ></outline-heart-icon>
+                    {{ item.likes ? item.likes : 0 }}
+                  </span>
+                  <span class="flex flex-row items-center">
+                    <outline-eye-icon class="h-4 w-4 mr-1"></outline-eye-icon>
+                    {{ item.views ? item.views : 0 }}
+                  </span>
+                </p>
               </div>
-              <p
-                class="text-gray-700 dark:text-gray-400"
-                :class="
-                  item.description && item.description.length ? '' : 'italic'
-                "
-              >
-                {{
-                  item.description
-                    ? item.description
-                    : 'Description not available'
-                }}
-              </p>
-              <p
-                class="
-                  text-gray-700
-                  dark:text-gray-400
-                  font-medium
-                  text-sm
-                  flex flex-row
-                  items-center
-                "
-              >
-                <span class="flex flex-row items-center mr-4">
-                  <outline-heart-icon class="h-4 w-4 mr-1"></outline-heart-icon>
-                  {{ item.likes ? item.likes : 0 }}
-                </span>
-                <span class="flex flex-row items-center">
-                  <outline-eye-icon class="h-4 w-4 mr-1"></outline-eye-icon>
-                  {{ item.views ? item.views : 0 }}
-                </span>
-              </p>
             </div>
           </div>
         </div>
@@ -90,7 +98,7 @@
         <div v-if="likesLoading">
           <loading-indicator></loading-indicator>
         </div>
-        <div v-else style="columns: 3 12.5rem; column-gap: 1.5rem">
+        <div v-else>
           <h3
             class="
               text-2xl
@@ -103,47 +111,51 @@
           >
             Likes
           </h3>
-          <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
-            <div class="flex flex-col space-y-1 text-sm">
-              <div class="mb-2">
-                <a :href="item.link"
-                  ><img
-                    class="transition duration-300 hover:opacity-75"
-                    :src="item.src"
-                    :alt="item.alt"
-                /></a>
-              </div>
-              <p
-                class="text-gray-700 dark:text-gray-400"
-                :class="
-                  item.description && item.description.length ? '' : 'italic'
-                "
-              >
-                {{
-                  item.description
-                    ? item.description
-                    : 'Description not available'
-                }}
-              </p>
-              <p class="text-gray-900 dark:text-gray-300">
-                by
-                <a :href="item.user.link" class="hover:underline"
-                  ><span>{{ item.user.name }}</span></a
+          <div style="columns: 3 12.5rem; column-gap: 1.5rem">
+            <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
+              <div class="flex flex-col space-y-1 text-sm">
+                <div class="mb-2">
+                  <a :href="item.link"
+                    ><img
+                      class="transition duration-300 hover:opacity-75"
+                      :src="item.src"
+                      :alt="item.alt"
+                  /></a>
+                </div>
+                <p
+                  class="text-gray-700 dark:text-gray-400"
+                  :class="
+                    item.description && item.description.length ? '' : 'italic'
+                  "
                 >
-              </p>
-              <p
-                class="
-                  text-gray-700
-                  dark:text-gray-400
-                  font-medium
-                  text-sm
-                  flex flex-row
-                  items-center
-                "
-              >
-                <outline-heart-icon class="h-4 w-4 mr-1 0"></outline-heart-icon>
-                {{ item.likes ? item.likes : 0 }}
-              </p>
+                  {{
+                    item.description
+                      ? item.description
+                      : 'Description not available'
+                  }}
+                </p>
+                <p class="text-gray-900 dark:text-gray-300">
+                  by
+                  <a :href="item.user.link" class="hover:underline"
+                    ><span>{{ item.user.name }}</span></a
+                  >
+                </p>
+                <p
+                  class="
+                    text-gray-700
+                    dark:text-gray-400
+                    font-medium
+                    text-sm
+                    flex flex-row
+                    items-center
+                  "
+                >
+                  <outline-heart-icon
+                    class="h-4 w-4 mr-1 0"
+                  ></outline-heart-icon>
+                  {{ item.likes ? item.likes : 0 }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
