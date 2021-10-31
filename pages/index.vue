@@ -58,6 +58,7 @@
           bg-gray-50
           dark:bg-gray-800
           text-white
+          rounded-md
         "
       >
         <div

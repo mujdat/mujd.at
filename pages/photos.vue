@@ -51,7 +51,12 @@
                 <div class="mb-2">
                   <a :href="item.link"
                     ><img
-                      class="transition duration-300 hover:opacity-75"
+                      class="
+                        transition
+                        duration-300
+                        hover:opacity-75
+                        rounded-md
+                      "
                       :src="item.src"
                       :alt="item.alt"
                   /></a>
@@ -117,7 +122,12 @@
                 <div class="mb-2">
                   <a :href="item.link"
                     ><img
-                      class="transition duration-300 hover:opacity-75"
+                      class="
+                        transition
+                        duration-300
+                        hover:opacity-75
+                        rounded-md
+                      "
                       :src="item.src"
                       :alt="item.alt"
                   /></a>
