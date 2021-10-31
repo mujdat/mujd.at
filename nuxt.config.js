@@ -94,6 +94,7 @@ export default {
     '@nuxtjs/prismic',
   ],
 
+  // Prismic: https://prismic.nuxtjs.org
   prismic: {
     endpoint: process.env.VITE_PRISMIC_ENDPOINT,
     modern: true,

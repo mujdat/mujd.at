@@ -1,3 +1,6 @@
+[build]
+  environment = { NODE_VERSION = "14.15.3" }
+
 [[redirects]]
   from = "https://mujdat.netlify.app"
   to = "https://mujd.at"
