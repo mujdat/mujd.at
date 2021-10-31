@@ -23,12 +23,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, useMeta, useStore } from '@nuxtjs/composition-api'
 import { usePrismicAPI } from 'nuxt-use-prismic-api'
+import { RootState } from '@/store'
 
 export default defineComponent({
   name: 'ImprintPage',
   setup() {
+    const store = useStore<RootState>()
+    useMeta({ title: store.state.meta.imprint.title })
     const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
@@ -36,6 +39,7 @@ export default defineComponent({
       uid: 'imprint'
     })
     return { page, pageLoading }
-  }
+  },
+  head: {}
 })
 </script>

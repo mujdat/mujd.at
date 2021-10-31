@@ -58,11 +58,11 @@ const defaultMusicState: MusicState = {
   recentlyPlayedTracksLoading: false,
   recentlySavedTracksLoading: false,
   spotifyIconGreen: '/Spotify_Icon_CMYK_Green.png',
-  error: false,
+  error: false
 }
 
 export const state = () => ({
-  ...defaultMusicState,
+  ...defaultMusicState
 })
 
 export type RootState = ReturnType<typeof state>
@@ -88,7 +88,7 @@ export const mutations: MutationTree<RootState> = {
   },
   SET_ERROR(state, error) {
     state.error = error
-  },
+  }
 }
 
 export const actions: ActionTree<RootState, RootState> = {
@@ -105,7 +105,7 @@ export const actions: ActionTree<RootState, RootState> = {
               name: item.name,
               description: item.description,
               img: item.images[0] ? item.images[0].url : state.spotifyIconGreen,
-              url: item.external_urls.spotify,
+              url: item.external_urls.spotify
             }
           })
           commit('SET_PLAYLISTS', playlists)
@@ -135,7 +135,7 @@ export const actions: ActionTree<RootState, RootState> = {
                   id: artist.id,
                   // @ts-ignore
                   uuid: this._vm.$uuid.v4(),
-                  url: artist.external_urls.spotify,
+                  url: artist.external_urls.spotify
                 }
               })
               return {
@@ -155,15 +155,15 @@ export const actions: ActionTree<RootState, RootState> = {
                   uuid: this._vm.$uuid.v4(),
                   name: item.track.name,
                   file: new Audio(item.track.preview_url),
-                  isPlaying: false,
-                },
+                  isPlaying: false
+                }
               }
             }
           )
           const uniqueTracks = [
             ...new Map(
               recentlyPlayedTracks.map((item: Track) => [item.id, item])
-            ).values(),
+            ).values()
           ]
           const mostRecentlyPlayedTracks = uniqueTracks.slice(0, 4)
           commit('SET_RECENTLY_PLAYED_TRACKS', mostRecentlyPlayedTracks)
@@ -193,7 +193,7 @@ export const actions: ActionTree<RootState, RootState> = {
                   id: artist.id,
                   // @ts-ignore
                   uuid: this._vm.$uuid.v4(),
-                  url: artist.external_urls.spotify,
+                  url: artist.external_urls.spotify
                 }
               })
               return {
@@ -213,8 +213,8 @@ export const actions: ActionTree<RootState, RootState> = {
                   uuid: this._vm.$uuid.v4(),
                   name: item.track.name,
                   file: new Audio(item.track.preview_url),
-                  isPlaying: false,
-                },
+                  isPlaying: false
+                }
               }
             }
           )
@@ -227,5 +227,5 @@ export const actions: ActionTree<RootState, RootState> = {
       commit('SET_ERROR', error)
       commit('SET_RECENTLY_SAVED_TRACKS_LOADING', false)
     }
-  },
+  }
 }

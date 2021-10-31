@@ -61,11 +61,9 @@ import {
   useMeta,
   useRouter
 } from '@nuxtjs/composition-api'
-
 import { RootState } from 'store'
 // @ts-ignore
 import { cloneDeep } from 'lodash'
-
 import { usePrismicAPI } from 'nuxt-use-prismic-api'
 
 interface SelectedPreviewTrack {
@@ -84,7 +82,7 @@ export default defineComponent({
     const leavingRoute = ref(false)
     const selectedTrack = ref<SelectedPreviewTrack | null>(null)
 
-    useMeta({ title: store.state.meta.about.title })
+    useMeta({ title: store.state.meta.music.title })
 
     store.dispatch('music/getRecentlyPlayedTracks')
     store.dispatch('music/getRecentlySavedTracks')

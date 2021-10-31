@@ -34,6 +34,7 @@ export default defineComponent({
       docType: 'page',
       uid: 'home'
     })
+
     return { page, pageLoading }
   },
   head: {}

@@ -66,7 +66,7 @@ export const mutations: MutationTree<RootState> = {
   },
   SET_ERROR(state, error) {
     state.error = error
-  },
+  }
 }
 
 export const actions: ActionTree<RootState, RootState> = {
@@ -130,5 +130,5 @@ export const actions: ActionTree<RootState, RootState> = {
       commit('SET_ERROR', error)
       commit('SET_LIKES_LOADING', false)
     }
-  },
+  }
 }

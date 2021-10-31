@@ -165,7 +165,7 @@ export default defineComponent({
   name: 'PhotosPage',
   setup() {
     const store = useStore<RootState>()
-    useMeta({ title: store.state.meta.about.title })
+    useMeta({ title: store.state.meta.photos.title })
     store.dispatch('photos/getPhotos')
     store.dispatch('photos/getLikes')
 

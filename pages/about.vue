@@ -22,12 +22,15 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, useStore, useMeta } from '@nuxtjs/composition-api'
 import { usePrismicAPI } from 'nuxt-use-prismic-api'
+import { RootState } from '@/store'
 
 export default defineComponent({
   name: 'AboutPage',
   setup() {
+    const store = useStore<RootState>()
+    useMeta({ title: store.state.meta.about.title })
     const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
