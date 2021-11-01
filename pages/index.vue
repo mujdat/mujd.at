@@ -86,7 +86,7 @@
             ><img
               :src="item.logo"
               :alt="item.name"
-              class="w-full max-w-[175px] max-h-16"
+              class="w-auto max-w-[175px] max-h-16"
           /></a>
         </div>
       </div>
