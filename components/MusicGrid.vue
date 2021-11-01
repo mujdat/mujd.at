@@ -45,7 +45,7 @@
                   id="itemImage"
                   :src="item.img"
                   :alt="item.name"
-                  class="object-cover"
+                  class="object-cover rounded-md"
                 />
               </div>
               <p
