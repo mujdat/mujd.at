@@ -47,10 +47,7 @@ export default {
         content: 'https://mujd.at/twitter-card.jpg'
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/memoji.jpg' }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
