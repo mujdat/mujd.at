@@ -51,7 +51,7 @@
             >
               <div class="flex flex-col space-y-1 text-sm">
                 <div class="mb-2">
-                  <a :href="item.link"
+                  <a :href="item.link" :title="item.alt"
                     ><img
                       class="
                         transition
@@ -122,7 +122,7 @@
             <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
               <div class="flex flex-col space-y-1 text-sm">
                 <div class="mb-2">
-                  <a :href="item.link"
+                  <a :href="item.link" :title="item.alt"
                     ><img
                       class="
                         transition
@@ -148,7 +148,10 @@
                 </p>
                 <p class="text-gray-900 dark:text-gray-300">
                   by
-                  <a :href="item.user.link" class="hover:underline"
+                  <a
+                    :href="item.user.link"
+                    :title="item.user.name"
+                    class="hover:underline"
                     ><span>{{ item.user.name }}</span></a
                   >
                 </p>

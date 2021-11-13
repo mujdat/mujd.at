@@ -26,7 +26,7 @@
           class="relative flex flex-col"
           :class="playlists ? 'justify-start' : 'justify-between'"
         >
-          <a :href="item.url">
+          <a :href="item.url" :title="item.name">
             <div id="itemImageNameWrapper">
               <div
                 id="itemImageWrapper"
@@ -74,9 +74,12 @@
             class="block text-sm font-medium text-gray-700 dark:text-gray-400"
           >
             <span v-for="(artist, index) in item.artists" :key="artist.uuid">
-              <a :href="artist.url" class="hover:underline">{{
-                artist.name
-              }}</a>
+              <a
+                :href="artist.url"
+                :title="artist.name"
+                class="hover:underline"
+                >{{ artist.name }}</a
+              >
               <span
                 v-if="
                   item.artists.length > 1 && index !== item.artists.length - 1

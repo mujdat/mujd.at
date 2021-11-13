@@ -17,7 +17,7 @@
         <p>
           I'm a Front-End Developer based in Dresden, Germany. Currently, I'm
           working at
-          <a target="_blank" rel="noopener" href="https://phmu.de"
+          <a target="_blank" rel="noopener" href="https://phmu.de" title="PHMU"
             ><strong>PHMU</strong></a
           >
           and also as a freelancer on the side. This is my personal website
@@ -82,13 +82,14 @@
             hover:scale-105
           "
         >
-          <a :href="item.href">
+          <a :href="item.href" :title="item.name">
             <span v-html="item.logo"></span>
           </a>
         </div>
         <div v-else class="flex items-center justify-center">
           <a
             :href="item.href"
+            :title="item.name"
             class="transition transform duration-300 hover:scale-110"
           >
             <picture>

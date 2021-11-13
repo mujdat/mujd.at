@@ -35,7 +35,7 @@
         </nuxt-link>
       </div>
       <div class="absolute right-1 top-8 md:relative md:right-0 md:top-0">
-        <a href="#">
+        <a href="#" title="Scroll to top">
           <outline-chevron-up-icon class="h-8 w-8"></outline-chevron-up-icon>
         </a>
       </div>

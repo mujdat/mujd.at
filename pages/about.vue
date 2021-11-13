@@ -17,8 +17,9 @@
         <h2>Hello there! 👋🏻</h2>
         <p>
           My name is Müjdat Korkmaz, I'm a Front-End Developer and I currently
-          work at <a href="https://phmu.de/"><strong>PHMU</strong></a> as well
-          as a freelancer on the side, based in Dresden, Germany.
+          work at
+          <a href="https://phmu.de/" title="PHMU"><strong>PHMU</strong></a> as
+          well as a freelancer on the side, based in Dresden, Germany.
         </p>
         <p>
           I started my journey as a developer with WordPress and it's still one

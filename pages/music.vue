@@ -20,8 +20,12 @@
             when I work and focus on a task at hand. My favorite genre is
             electronic music but I don't really have a spesific sub-genre. Most
             of the time I use
-            <a href="https://open.spotify.com/user/_mujdat">Spotify</a>, so here
-            you'll will find my playlists, recently played and saved songs.
+            <a
+              href="https://open.spotify.com/user/_mujdat"
+              title="Müjdat Korkmaz Spotify"
+              >Spotify</a
+            >, so here you'll will find my playlists, recently played and saved
+            songs.
           </p>
           <p>
             I've also been trying to produce music as a hobby. I'm still
