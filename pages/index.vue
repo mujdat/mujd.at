@@ -72,7 +72,7 @@
             transition
             transform
             duration-300
-            hover:scale-110
+            hover:scale-105
           "
         >
           <a :href="item.href">
@@ -83,11 +83,20 @@
           <a
             :href="item.href"
             class="transition transform duration-300 hover:scale-110"
-            ><img
-              :src="item.logo"
-              :alt="item.name"
-              class="w-auto max-w-[175px] max-h-16"
-          /></a>
+          >
+            <picture>
+              <source
+                :srcset="item.webp"
+                type="image/webp"
+                class="w-auto max-w-[175px] max-h-16 object-cover"
+              />
+              <img
+                :src="item.jpg ? item.jpg : item.png"
+                :alt="item.name"
+                class="w-auto max-w-[175px] max-h-16 object-cover"
+              />
+            </picture>
+          </a>
         </div>
       </div>
     </div>

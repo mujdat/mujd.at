@@ -4,12 +4,34 @@
     class="flex justify-start lg:w-0 lg:flex-1"
   >
     <nuxt-link to="/">
-      <img class="h-12 w-12 rounded-full" src="/avatar.png" alt="Avatar" />
+      <picture>
+        <source
+          srcset="/memoji.webp"
+          type="image/webp"
+          class="h-16 w-16 rounded-full"
+        />
+        <img
+          src="/avatar.jpg"
+          alt="Müjdat Korkmaz"
+          class="h-16 w-16 rounded-full"
+        />
+      </picture>
     </nuxt-link>
   </div>
   <div v-else>
     <nuxt-link to="/">
-      <img class="h-12 w-12 rounded-full" src="/avatar.png" alt="Avatar" />
+      <picture>
+        <source
+          srcset="/memoji.webp"
+          type="image/webp"
+          class="h-16 w-16 rounded-full"
+        />
+        <img
+          src="/avatar.jpg"
+          alt="Müjdat Korkmaz"
+          class="h-16 w-16 rounded-full"
+        />
+      </picture>
     </nuxt-link>
   </div>
 </template>
