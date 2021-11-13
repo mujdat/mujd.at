@@ -1,7 +1,6 @@
 <template>
   <div>
-    <loading-indicator v-if="pageLoading && pageLoading[0]"></loading-indicator>
-    <div v-else-if="page && page.length">
+    <div>
       <h2
         class="
           text-3xl
@@ -12,19 +11,25 @@
           dark:text-gray-300
         "
       >
-        {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+        Contact
       </h2>
-      <prismic-rich-text
-        class="prose dark:prose-dark"
-        :field="page[0].data.content"
-      />
+      <div class="prose dark:prose-dark">
+        <p>
+          If you want to chat, you can reach out to me via
+          <a href="https://twitter.com/mujdatkorkmaz"
+            ><strong>DM on Twitter</strong></a
+          >, but if you want to work with me on an awesome project, you can send
+          an email to
+          <a href="mailto:me@mujd.at"><strong>me@mujd.at</strong></a> with the
+          details.
+        </p>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, useMeta, useStore } from '@nuxtjs/composition-api'
-import { usePrismicAPI } from 'nuxt-use-prismic-api'
 import { RootState } from '@/store'
 
 export default defineComponent({
@@ -32,13 +37,8 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     useMeta({ title: store.state.meta.contact.title })
-    const { page, pageLoading } = usePrismicAPI({
-      data: 'page',
-      method: 'getByUID',
-      docType: 'page',
-      uid: 'contact'
-    })
-    return { page, pageLoading }
+
+    return {}
   },
   head: {}
 })

@@ -1,10 +1,7 @@
 <template>
   <div>
     <div>
-      <loading-indicator
-        v-if="pageLoading && pageLoading[0]"
-      ></loading-indicator>
-      <div v-else-if="page && page.length">
+      <div>
         <h2
           class="
             text-3xl
@@ -15,12 +12,17 @@
             dark:text-gray-300
           "
         >
-          {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+          Photos
         </h2>
-        <prismic-rich-text
-          class="prose dark:prose-dark"
-          :field="page[0].data.content"
-        />
+        <div class="prose dark:prose-dark">
+          <p>
+            I don't take many photos and when I do it's usually with my iPhone
+            but every now and then I have some good ones that I'd like to share.
+            Here, you'll find some photos I was able to capture, my unsplash
+            likes &amp; collections. The ones that I can't upload there, are
+            usually on my <a href="https://instagram.com/mujdat">Instagram</a>.
+          </p>
+        </div>
       </div>
     </div>
     <div class="space-y-16 mt-16">
@@ -180,7 +182,6 @@ import {
   useMeta,
   computed
 } from '@nuxtjs/composition-api'
-import { usePrismicAPI } from 'nuxt-use-prismic-api'
 import { RootState } from 'store'
 
 export default defineComponent({
@@ -207,16 +208,7 @@ export default defineComponent({
       return store.state.photos.likesLoading
     })
 
-    const { page, pageLoading } = usePrismicAPI({
-      data: 'page',
-      method: 'getByUID',
-      docType: 'page',
-      uid: 'photos'
-    })
-
     return {
-      page,
-      pageLoading,
       photos,
       likes,
       photosLoading,

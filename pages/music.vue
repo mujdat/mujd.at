@@ -1,10 +1,7 @@
 <template>
   <div>
     <div>
-      <loading-indicator
-        v-if="pageLoading && pageLoading[0]"
-      ></loading-indicator>
-      <div v-else-if="page && page.length">
+      <div>
         <h2
           class="
             text-3xl
@@ -15,12 +12,23 @@
             dark:text-gray-300
           "
         >
-          {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+          Music
         </h2>
-        <prismic-rich-text
-          class="prose dark:prose-dark"
-          :field="page[0].data.content"
-        />
+        <div class="prose dark:prose-dark">
+          <p>
+            One of my favorite things to do is to listen to music. Especially
+            when I work and focus on a task at hand. My favorite genre is
+            electronic music but I don't really have a spesific sub-genre. Most
+            of the time I use
+            <a href="https://open.spotify.com/user/_mujdat">Spotify</a>, so here
+            you'll will find my playlists, recently played and saved songs.
+          </p>
+          <p>
+            I've also been trying to produce music as a hobby. I'm still
+            learning but once I have something to share, this would be the place
+            to find it.
+          </p>
+        </div>
       </div>
     </div>
     <div class="mt-16">
@@ -64,7 +72,6 @@ import {
 import { RootState } from 'store'
 // @ts-ignore
 import { cloneDeep } from 'lodash'
-import { usePrismicAPI } from 'nuxt-use-prismic-api'
 
 interface SelectedPreviewTrack {
   name: string
@@ -79,7 +86,6 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     const router = useRouter()
-    const leavingRoute = ref(false)
     const selectedTrack = ref<SelectedPreviewTrack | null>(null)
 
     useMeta({ title: store.state.meta.music.title })
@@ -88,9 +94,6 @@ export default defineComponent({
     store.dispatch('music/getRecentlySavedTracks')
     store.dispatch('music/getPlaylists')
 
-    const musicTitle = computed(() => {
-      return store.state.meta.music.title
-    })
     const playlists = computed(() => {
       return store.state.music.playlists
     })
@@ -151,26 +154,15 @@ export default defineComponent({
       next()
     })
 
-    const { page, pageLoading } = usePrismicAPI({
-      data: 'page',
-      method: 'getByUID',
-      docType: 'page',
-      uid: 'music'
-    })
-
     return {
-      page,
-      pageLoading,
       playPreviewTrack,
       pausePreviewTrack,
-      musicTitle,
       playlists,
       recentlyPlayedTracks,
       recentlySavedTracks,
       playlistsLoading,
       recentlyPlayedTracksLoading,
       recentlySavedTracksLoading,
-      leavingRoute,
       selectedTrack
     }
   },

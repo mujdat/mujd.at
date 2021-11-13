@@ -1,7 +1,6 @@
 <template>
   <div>
-    <loading-indicator v-if="pageLoading && pageLoading[0]"></loading-indicator>
-    <div v-else-if="page && page.length">
+    <div>
       <h2
         class="
           text-3xl
@@ -12,12 +11,20 @@
           dark:text-gray-300
         "
       >
-        {{ page[0].data.title ? page[0].data.title[0].text : '' }}
+        Hi, my name is Müjdat.
       </h2>
-      <prismic-rich-text
-        class="prose dark:prose-dark"
-        :field="page[0].data.content"
-      />
+      <div class="prose dark:prose-dark">
+        <p>
+          I'm a Front-End Developer based in Dresden, Germany. Currently, I'm
+          working at
+          <a target="_blank" rel="noopener" href="https://phmu.de"
+            ><strong>PHMU</strong></a
+          >
+          and also as a freelancer on the side. This is my personal website
+          where you'll be able to find stuff I'm working on, music I listen to
+          or create and photos I take or like.
+        </p>
+      </div>
       <nuxt-link to="about">
         <btn class="mt-8"
           ><span>More about me</span>
@@ -104,20 +111,13 @@
 </template>
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import { usePrismicAPI } from 'nuxt-use-prismic-api'
+
 import { logoCloud } from '@/utils/constants'
 
 export default defineComponent({
   name: 'HomePage',
   setup() {
-    const { page, pageLoading } = usePrismicAPI({
-      data: 'page',
-      method: 'getByUID',
-      docType: 'page',
-      uid: 'home'
-    })
-
-    return { page, pageLoading, logoCloud }
+    return { logoCloud }
   },
   head: {}
 })
