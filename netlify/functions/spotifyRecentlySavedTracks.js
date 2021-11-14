@@ -16,12 +16,12 @@ exports.handler = async (event, context) => {
     method: 'POST',
     headers: {
       Authorization: `Basic ${auth}`,
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     body: `grant_type=refresh_token&refresh_token=${refreshToken}&redirect_uri=${encodeURI(
       'https://localhost:8888',
       +'/.netlify/functions/spotifyCallback&scope=user-library-read'
-    )}`,
+    )}`
   }
 
   const accessToken = await fetch(tokenEndpoint, options)
@@ -33,13 +33,13 @@ exports.handler = async (event, context) => {
       console.error(err)
     })
 
-  const recentlySavedTracksEndpoint = `https://api.spotify.com/v1/me/tracks?limit=12`
+  const recentlySavedTracksEndpoint = `https://api.spotify.com/v1/me/tracks?limit=4`
 
   return fetch(`${recentlySavedTracksEndpoint}`, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
+      Authorization: `Bearer ${accessToken}`
+    }
   })
     .then((res) => res.json())
     .then((json) => {
@@ -48,7 +48,7 @@ exports.handler = async (event, context) => {
     .then((json) => {
       return {
         statusCode: 200,
-        body: JSON.stringify(json),
+        body: JSON.stringify(json)
       }
     })
 }

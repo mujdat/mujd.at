@@ -13,7 +13,7 @@
       >
         About
       </h2>
-      <div class="prose dark:prose-dark">
+      <div class="prose-sm md:prose dark:prose-dark">
         <h2>Hello there! 👋🏻</h2>
         <p>
           My name is Müjdat Korkmaz, I'm a Front-End Developer and I currently

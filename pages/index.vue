@@ -13,7 +13,7 @@
       >
         Hi, my name is Müjdat.
       </h2>
-      <div class="prose dark:prose-dark">
+      <div class="prose-sm md:prose dark:prose-dark">
         <p>
           I'm a Front-End Developer based in Dresden, Germany. Currently, I'm
           working at
@@ -48,7 +48,7 @@
       >
         Projects
       </h2>
-      <div class="prose dark:prose-dark">
+      <div class="prose-sm md:prose dark:prose-dark">
         <p>Here are some of the clients I've worked with:</p>
       </div>
     </div>
@@ -68,40 +68,22 @@
           rounded-md
         "
       >
-        <div
-          v-if="item.svg"
-          class="
-            flex
-            items-center
-            justify-center
-            text-gray-700
-            dark:text-white
-            transition
-            transform
-            duration-300
-            hover:scale-105
-          "
-        >
-          <a :href="item.href" :title="item.name">
-            <span v-html="item.logo"></span>
-          </a>
-        </div>
-        <div v-else class="flex items-center justify-center">
+        <div class="flex items-center justify-center">
           <a
             :href="item.href"
             :title="item.name"
-            class="transition transform duration-300 hover:scale-110"
+            class="transition transform duration-300 hover:scale-105"
           >
             <picture>
               <source
                 :srcset="item.webp"
                 type="image/webp"
-                class="w-auto max-w-[175px] max-h-16 object-cover"
+                class="w-full max-w-[175px] max-h-16 object-cover"
               />
               <img
                 :src="item.jpg ? item.jpg : item.png"
                 :alt="item.name"
-                class="w-auto max-w-[175px] max-h-16 object-cover"
+                class="w-full max-w-[175px] max-h-16 object-cover"
               />
             </picture>
           </a>

@@ -14,7 +14,7 @@
         >
           Music
         </h2>
-        <div class="prose dark:prose-dark">
+        <div class="prose-sm md:prose dark:prose-dark">
           <p>
             One of my favorite things to do is to listen to music. Especially
             when I work and focus on a task at hand. My favorite genre is

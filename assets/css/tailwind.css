@@ -21,3 +21,12 @@ html {
 .prose {
   @apply max-w-none;
 }
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition opacity-25
+}
+.page-enter,
+.page-leave-to {
+  @apply opacity-0
+}
