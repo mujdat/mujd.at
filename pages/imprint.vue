@@ -15,7 +15,7 @@
         {{ page[0].data.title ? page[0].data.title[0].text : '' }}
       </h2>
       <prismic-rich-text
-        class="prose-sm md:prose dark:prose-dark"
+        class="prose-sm md:prose md:max-w-none dark:prose-dark"
         :field="page[0].data.content"
       />
     </div>

@@ -14,7 +14,7 @@
         >
           Photos
         </h2>
-        <div class="prose-sm md:prose dark:prose-dark">
+        <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
           <p>
             I don't take many photos and when I do it's usually with my iPhone
             but every now and then I have some good ones that I'd like to share.

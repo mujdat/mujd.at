@@ -13,7 +13,7 @@
       >
         Contact
       </h2>
-      <div class="prose-sm md:prose dark:prose-dark">
+      <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
         <p>
           If you want to chat, you can reach out to me via
           <a

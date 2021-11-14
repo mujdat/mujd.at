@@ -18,10 +18,6 @@ html {
   @apply bg-gray-900;
 }
 
-.prose {
-  @apply max-w-none;
-}
-
 .page-enter-active,
 .page-leave-active {
   @apply transition opacity-25

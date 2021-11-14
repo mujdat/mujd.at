@@ -13,7 +13,9 @@
       >
         Hi, my name is Müjdat.
       </h2>
-      <div class="prose-sm md:prose dark:prose-dark">
+      <div
+        class="prose-sm md:prose md:max-w-none md:max-w-none dark:prose-dark"
+      >
         <p>
           I'm a Front-End Developer based in Dresden, Germany. Currently, I'm
           working at
@@ -48,7 +50,9 @@
       >
         Projects
       </h2>
-      <div class="prose-sm md:prose dark:prose-dark">
+      <div
+        class="prose-sm md:prose md:max-w-none md:max-w-none dark:prose-dark"
+      >
         <p>Here are some of the clients I've worked with:</p>
       </div>
     </div>
