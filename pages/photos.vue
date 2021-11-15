@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="photos && likes">
     <div>
       <div>
         <h2
@@ -27,10 +27,7 @@
     </div>
     <div class="space-y-16 mt-16">
       <div>
-        <div v-if="photosLoading">
-          <loading-indicator></loading-indicator>
-        </div>
-        <div v-else>
+        <div>
           <h3
             class="
               text-2xl
@@ -102,10 +99,7 @@
         </div>
       </div>
       <div>
-        <div v-if="likesLoading">
-          <loading-indicator></loading-indicator>
-        </div>
-        <div v-else>
+        <div>
           <h3
             class="
               text-2xl

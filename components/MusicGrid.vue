@@ -1,9 +1,6 @@
 <template>
-  <div>
-    <div v-if="loading">
-      <loading-indicator></loading-indicator>
-    </div>
-    <div v-else>
+  <div v-if="items">
+    <div>
       <h3
         class="
           text-2xl

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <loading-indicator v-if="pageLoading && pageLoading[0]"></loading-indicator>
-    <div v-else-if="page && page.length">
+    <div v-if="page && page.length">
       <h2
         class="
           text-3xl
