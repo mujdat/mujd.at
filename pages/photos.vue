@@ -1,5 +1,5 @@
 <template>
-  <div v-if="photos && likes">
+  <div>
     <div>
       <div>
         <h2
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="space-y-16 mt-16">
+    <div v-if="photos && likes" class="space-y-16 mt-16">
       <div>
         <div>
           <h2 class="title">My Photos</h2>

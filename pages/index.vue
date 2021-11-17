@@ -23,20 +23,8 @@
         </btn>
       </nuxt-link>
     </div>
-    <div>
-      <h2
-        class="
-          text-3xl
-          mb-6
-          mt-16
-          tracking-light
-          font-extrabold
-          text-gray-900
-          dark:text-gray-300
-        "
-      >
-        Projects
-      </h2>
+    <div class="mt-16">
+      <h2 class="title">Projects</h2>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
         <p>Here are some of the clients I've worked with:</p>
       </div>
