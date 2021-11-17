@@ -1,38 +1,23 @@
 <template>
   <div>
     <div>
-      <div>
-        <h2
-          class="
-            text-3xl
-            mb-6
-            tracking-light
-            font-extrabold
-            text-gray-900
-            dark:text-gray-300
-          "
-        >
-          Music
-        </h2>
-        <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-          <p>
-            One of my favorite things to do is to listen to music. Especially
-            when I work and focus on a task at hand. My favorite genre is
-            electronic music but I don't really have a spesific sub-genre. Most
-            of the time I use
-            <a
-              href="https://open.spotify.com/user/_mujdat"
-              title="Müjdat Korkmaz Spotify"
-              >Spotify</a
-            >, so here you'll will find my playlists, recently played and saved
-            songs.
-          </p>
-          <p>
-            I've also been trying to produce music as a hobby. I'm still
-            learning but once I have something to share, this would be the place
-            to find it.
-          </p>
-        </div>
+      <h2 class="title">Music</h2>
+      <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
+        <p>
+          One of my favorite things to do is to listen to music. Especially when
+          I work and focus on a task at hand. My favorite genre is electronic
+          music but I don't really have a spesific sub-genre. Most of the time I
+          use
+          <a href="https://open.spotify.com/user/_mujdat" title=" Spotify"
+            >Spotify</a
+          >, so here you'll will find my playlists, recently played and saved
+          songs.
+        </p>
+        <p>
+          I've also been trying to produce music as a hobby. I'm still learning
+          but once I have something to share, this would be the place to find
+          it.
+        </p>
       </div>
     </div>
     <div class="mt-16">

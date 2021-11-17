@@ -1,16 +1,7 @@
 <template>
   <div>
     <div v-if="page && page.length">
-      <h2
-        class="
-          text-3xl
-          mb-6
-          tracking-light
-          font-extrabold
-          text-gray-900
-          dark:text-gray-300
-        "
-      >
+      <h2 class="title">
         {{ page[0].data.title ? page[0].data.title[0].text : '' }}
       </h2>
       <prismic-rich-text
@@ -31,13 +22,13 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     useMeta({ title: store.state.meta.imprint.title })
-    const { page, pageLoading } = usePrismicAPI({
+    const { page } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
       uid: 'imprint'
     })
-    return { page, pageLoading }
+    return { page }
   },
   head: {}
 })

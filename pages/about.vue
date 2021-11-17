@@ -1,18 +1,7 @@
 <template>
   <div>
     <div>
-      <h2
-        class="
-          text-3xl
-          mb-6
-          tracking-light
-          font-extrabold
-          text-gray-900
-          dark:text-gray-300
-        "
-      >
-        About
-      </h2>
+      <h2 class="title">About</h2>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
         <h2>Hello there! 👋🏻</h2>
         <p>

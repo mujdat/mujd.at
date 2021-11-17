@@ -1,18 +1,9 @@
 <template>
   <div v-if="items">
     <div>
-      <h3
-        class="
-          text-2xl
-          mb-6
-          tracking-tight
-          font-extrabold
-          text-gray-900
-          dark:text-gray-300
-        "
-      >
+      <h2 class="title">
         {{ title }}
-      </h3>
+      </h2>
       <ul
         role="list"
         class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-6"

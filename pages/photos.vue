@@ -28,18 +28,7 @@
     <div class="space-y-16 mt-16">
       <div>
         <div>
-          <h3
-            class="
-              text-2xl
-              mb-6
-              tracking-tight
-              font-extrabold
-              text-gray-900
-              dark:text-gray-300
-            "
-          >
-            My Photos
-          </h3>
+          <h2 class="title">My Photos</h2>
           <div style="columns: 3 12.5rem; column-gap: 1.5rem">
             <div
               v-for="item in photos"
@@ -100,18 +89,7 @@
       </div>
       <div>
         <div>
-          <h3
-            class="
-              text-2xl
-              mb-6
-              tracking-tight
-              font-extrabold
-              text-gray-900
-              dark:text-gray-300
-            "
-          >
-            Likes
-          </h3>
+          <h2 class="title">Likes</h2>
           <div style="columns: 3 12.5rem; column-gap: 1.5rem">
             <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
               <div class="flex flex-col space-y-1 text-sm">
