@@ -15,8 +15,8 @@
           of the main technologies I use to create websites and web
           applications. Besides WordPress and the fundamentals like HTML, CSS
           &amp; JavaScript, I use technologies like TypeScript, Vue.js, Nuxt.js,
-          TailwindCSS, SASS and GraphQL / REST every day. I'm experienced in
-          building dynamic, flexible, interactive and modern websites and web
+          TailwindCSS, SASS and GraphQL / REST APIs every day. I'm experienced
+          in building dynamic, flexible, interactive and modern websites and web
           applications.
         </p>
       </div>

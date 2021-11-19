@@ -24,7 +24,7 @@
       </nuxt-link>
     </div>
     <div class="mt-16">
-      <h2 class="title">Projects</h2>
+      <h2 class="title">Projects / Clients</h2>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
         <p>Here are some of the clients I've worked with:</p>
       </div>
