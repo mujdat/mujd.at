@@ -6,13 +6,9 @@
         <source
           srcset="/about.webp"
           type="image/webp"
-          class="rounded-md w-full md:w-64"
+          class="rounded-md w-full"
         />
-        <img
-          src="/about.jpg"
-          alt="Müjdat Korkmaz"
-          class="rounded-md w-full md:w-64"
-        />
+        <img src="/about.jpg" alt="Müjdat Korkmaz" class="rounded-md w-full" />
       </picture>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
         <p>
@@ -26,9 +22,11 @@
           of the main technologies I use to create websites and web
           applications. Besides WordPress and the fundamentals like HTML, CSS
           &amp; JavaScript, I use technologies like TypeScript, Vue.js, Nuxt.js,
-          TailwindCSS, SASS and GraphQL / REST APIs every day. I'm experienced
-          in building dynamic, flexible, interactive and modern websites and web
-          applications.
+          TailwindCSS, SASS and GraphQL / REST APIs every day.
+        </p>
+        <p>
+          I'm experienced in building dynamic, flexible, interactive and modern
+          websites and web applications.
         </p>
       </div>
     </div>
