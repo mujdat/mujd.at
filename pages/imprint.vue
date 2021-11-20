@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-if="page && page.length">
+    <skeleton-loader v-if="pageLoading && pageLoading[0]"></skeleton-loader>
+    <div v-else-if="page && page.length">
       <h2 class="title">
         {{ page[0].data.title ? page[0].data.title[0].text : '' }}
       </h2>
@@ -22,13 +23,13 @@ export default defineComponent({
   setup() {
     const store = useStore<RootState>()
     useMeta({ title: store.state.meta.imprint.title })
-    const { page } = usePrismicAPI({
+    const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
       uid: 'imprint'
     })
-    return { page }
+    return { page, pageLoading }
   },
   head: {}
 })
