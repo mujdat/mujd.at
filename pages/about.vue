@@ -1,14 +1,25 @@
 <template>
   <div>
-    <div>
-      <h2 class="title">About</h2>
+    <h2 class="title">About</h2>
+    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-12">
+      <picture class="flex-shrink-0 mx-auto">
+        <source
+          srcset="/about.webp"
+          type="image/webp"
+          class="rounded-md w-full md:w-64"
+        />
+        <img
+          src="/about.jpg"
+          alt="Müjdat Korkmaz"
+          class="rounded-md w-full md:w-64"
+        />
+      </picture>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-        <h2>Hello there! 👋🏻</h2>
         <p>
           My name is Müjdat Korkmaz, I'm a Front-End Developer and I currently
           work at
-          <a href="https://phmu.de/" title="PHMU"><strong>PHMU</strong></a> as
-          well as a freelancer on the side, based in Dresden, Germany.
+          <a href="https://phmu.de/" title="PHMU"><strong>PHMU</strong></a>
+          as well as a freelancer on the side, based in Dresden, Germany.
         </p>
         <p>
           I started my journey as a developer with WordPress and it's still one

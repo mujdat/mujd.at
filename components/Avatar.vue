@@ -11,7 +11,7 @@
           class="h-16 w-16 rounded-full"
         />
         <img
-          src="/avatar.jpg"
+          src="/memoji.jpg"
           alt="Müjdat Korkmaz"
           class="h-16 w-16 rounded-full"
         />
