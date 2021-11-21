@@ -30,6 +30,28 @@
         </p>
       </div>
     </div>
+    <div class="flex space-x-4">
+      <a href="https://github.com/mujdat">
+        <btn class="mt-8">
+          <outline-terminal-icon class="w-4 h-4 mr-2"></outline-terminal-icon>
+          <span>GitHub</span>
+        </btn>
+      </a>
+      <a href="https://twitter.com/mujdatkorkmaz">
+        <btn class="mt-8">
+          <outline-chat-icon class="w-4 h-4 mr-2"></outline-chat-icon>
+          <span>Twitter</span>
+        </btn>
+      </a>
+      <nuxt-link to="contact">
+        <btn class="mt-8"
+          ><span>Contact</span>
+          <outline-external-link-icon
+            class="w-4 h-4 ml-2"
+          ></outline-external-link-icon>
+        </btn>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 <script lang="ts">
