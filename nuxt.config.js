@@ -59,7 +59,7 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-uuid.ts'],
+  plugins: ['~/plugins/vue-uuid.ts', '~/plugins/vue-sanitize.ts'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -101,8 +101,35 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+
+    // https://i18n.nuxtjs.org/
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    locales: [
+      {
+        name: 'Deutsch',
+        code: 'de',
+        iso: 'de-DE',
+        file: 'de-DE.js'
+      },
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js'
+      }
+    ],
+    detectBrowserLanguage: {
+      onlyOnRoot: true,
+      fallbackLocale: 'en'
+    },
+    strategy: 'no_prefix',
+    defaultLocale: 'de',
+    langDir: 'lang/'
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

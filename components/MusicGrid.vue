@@ -122,7 +122,7 @@
                     "
                     class="w-5 h-5 mr-1"
                   />
-                  Preview
+                  {{ $t('pages.music.playButton') }}
                 </span>
               </button>
             </div>

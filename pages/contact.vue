@@ -1,20 +1,11 @@
 <template>
   <div>
     <div>
-      <h2 class="title">Contact</h2>
-      <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-        <p>
-          If you want to chat, you can reach out to me via
-          <a href="https://twitter.com/mujdatkorkmaz" title=" Twitter"
-            ><strong>DM on Twitter</strong></a
-          >, but if you want to work with me on an awesome project, you can send
-          an email to
-          <a href="mailto:me@mujd.at" title=" Email"
-            ><strong>me@mujd.at</strong></a
-          >
-          with the details.
-        </p>
-      </div>
+      <h2 class="title">{{ $t('pages.contact.title') }}</h2>
+      <div
+        class="prose-sm md:prose md:max-w-none dark:prose-dark"
+        v-html="$sanitize($t('pages.contact.text'))"
+      ></div>
     </div>
   </div>
 </template>

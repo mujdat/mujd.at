@@ -17,9 +17,6 @@
     >
       <div class="grid grid-cols-3 gap-y-4 md:flex md:space-x-2">
         <nuxt-link
-          v-for="(item, i) in menuItems"
-          :key="item.name"
-          :to="item.to"
           class="
             md:flex md:flex-row
             w-auto
@@ -28,10 +25,9 @@
             hover:text-primary-900
             dark:hover:text-primary-400
           "
-          >{{ item.name }}
-          <span class="hidden md:flex md:ml-1 text-gray-500">{{
-            i === menuItems.length - 1 ? '' : '&middot;'
-          }}</span>
+          :to="$t('menuItems.imprint.to')"
+        >
+          {{ $t('menuItems.imprint.name') }}
         </nuxt-link>
       </div>
       <div class="absolute right-1 top-8 md:relative md:right-0 md:top-0">
