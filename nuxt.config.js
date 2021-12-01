@@ -104,8 +104,32 @@ export default {
     '@nuxtjs/axios',
 
     // https://i18n.nuxtjs.org/
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+
+    [
+      'nuxt-cookie-control',
+      {
+        controlButton: true,
+        css: true
+      }
+    ]
   ],
+
+  cookies: {
+    necessary: [
+      {
+        name: {
+          de: 'Standard-Cookies',
+          en: 'Default Cookies'
+        },
+        description: {
+          de: 'Wird zur Cookie-Kontrolle verwendet.',
+          en: 'Used for cookie control.'
+        },
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+      }
+    ]
+  },
 
   i18n: {
     locales: [
@@ -127,7 +151,7 @@ export default {
       fallbackLocale: 'en'
     },
     strategy: 'no_prefix',
-    defaultLocale: 'de',
+    defaultLocale: 'en',
     langDir: 'lang/'
   },
 

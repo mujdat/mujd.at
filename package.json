@@ -21,7 +21,9 @@
     "core-js": "^3.12.1",
     "global": "^4.4.0",
     "netlify-cli": "^3.39.4",
+    "node-sass": "4.14.1",
     "nuxt": "^2.15.8",
+    "nuxt-cookie-control": "^1.9.91",
     "nuxt-use-prismic-api": "^1.1.8",
     "vue-sanitize": "^0.2.1"
   },

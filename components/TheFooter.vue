@@ -36,11 +36,12 @@
         </a>
       </div>
     </div>
+    <cookie-control :locale="locale" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, useContext, computed } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'TheFooter',
@@ -71,7 +72,18 @@ export default defineComponent({
         to: '/imprint'
       }
     ]
-    return { menuItems }
+    const ctx = useContext()
+    const locale = computed(() => ctx.i18n.getLocaleCookie())
+    return { menuItems, locale }
   }
 })
 </script>
+<style lang="postcss">
+.cookieControl__BarContainer {
+  @apply prose max-w-none bg-gray-200 dark:bg-[#111];
+}
+.cookieControl__BarContainer h3,
+.cookieControl__BarContainer p {
+  @apply text-[#111] dark:text-gray-200;
+}
+</style>
