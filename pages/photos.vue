@@ -12,23 +12,18 @@
             dark:text-gray-300
           "
         >
-          Photos
+          {{ $t('pages.photos.title') }}
         </h2>
-        <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-          <p>
-            I don't take many photos and when I do it's usually with my iPhone
-            but every now and then I have some good ones that I'd like to share.
-            Here, you'll find some photos I was able to capture, my unsplash
-            likes &amp; collections. The ones that I can't upload there, are
-            usually on my <a href="https://instagram.com/mujdat">Instagram</a>.
-          </p>
-        </div>
+        <div
+          class="prose-sm md:prose md:max-w-none dark:prose-dark"
+          v-html="$sanitize($t('pages.music.text'))"
+        ></div>
       </div>
     </div>
     <div v-if="photos && likes" class="space-y-16 mt-16">
       <div>
         <div>
-          <h2 class="title">My Photos</h2>
+          <h2 class="title">{{ $t('pages.photos.myPhotos') }}</h2>
           <div style="columns: 3 12.5rem; column-gap: 1.5rem">
             <div
               v-for="item in photos"
@@ -55,11 +50,7 @@
                     item.description && item.description.length ? '' : 'italic'
                   "
                 >
-                  {{
-                    item.description
-                      ? item.description
-                      : 'Description not available'
-                  }}
+                  {{ item.description ? item.description : '' }}
                 </p>
                 <p
                   class="
@@ -89,7 +80,7 @@
       </div>
       <div>
         <div>
-          <h2 class="title">Likes</h2>
+          <h2 class="title">{{ $t('pages.photos.likes') }}</h2>
           <div style="columns: 3 12.5rem; column-gap: 1.5rem">
             <div v-for="item in likes" :key="item.id" class="inline-block mb-5">
               <div class="flex flex-col space-y-1 text-sm">
@@ -112,11 +103,7 @@
                     item.description && item.description.length ? '' : 'italic'
                   "
                 >
-                  {{
-                    item.description
-                      ? item.description
-                      : 'Description not available'
-                  }}
+                  {{ item.description ? item.description : '' }}
                 </p>
                 <p class="text-gray-900 dark:text-gray-300">
                   by

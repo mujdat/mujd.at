@@ -17,9 +17,6 @@
     >
       <div class="grid grid-cols-3 gap-y-4 md:flex md:space-x-2">
         <nuxt-link
-          v-for="(item, i) in menuItems"
-          :key="item.name"
-          :to="item.to"
           class="
             md:flex md:flex-row
             w-auto
@@ -28,10 +25,9 @@
             hover:text-primary-900
             dark:hover:text-primary-400
           "
-          >{{ item.name }}
-          <span class="hidden md:flex md:ml-1 text-gray-500">{{
-            i === menuItems.length - 1 ? '' : '&middot;'
-          }}</span>
+          :to="$t('menuItems.imprint.to')"
+        >
+          {{ $t('menuItems.imprint.name') }}
         </nuxt-link>
       </div>
       <div class="absolute right-1 top-8 md:relative md:right-0 md:top-0">
@@ -40,11 +36,12 @@
         </a>
       </div>
     </div>
+    <cookie-control :locale="locale" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, useContext, computed } from '@nuxtjs/composition-api'
 
 export default defineComponent({
   name: 'TheFooter',
@@ -75,7 +72,18 @@ export default defineComponent({
         to: '/imprint'
       }
     ]
-    return { menuItems }
+    const ctx = useContext()
+    const locale = computed(() => ctx.i18n.getLocaleCookie())
+    return { menuItems, locale }
   }
 })
 </script>
+<style lang="postcss">
+.cookieControl__BarContainer {
+  @apply prose max-w-none bg-gray-200 dark:bg-[#111];
+}
+.cookieControl__BarContainer h3,
+.cookieControl__BarContainer p {
+  @apply text-[#111] dark:text-gray-200;
+}
+</style>

@@ -63,24 +63,7 @@
           </button>
         </div>
         <nav class="hidden sm:flex space-x-10">
-          <nuxt-link
-            v-for="item in menuItems"
-            :key="item.name"
-            :to="item.to"
-            class="
-              transition
-              duration-300
-              text-base
-              font-medium
-              text-gray-900
-              dark:text-gray-300
-              hover:text-primary-900 hover:border-primary-900
-              dark:hover:text-primary-400 dark:hover:border-primary-400
-              border-b-2 border-transparent
-            "
-          >
-            {{ item.name }}
-          </nuxt-link>
+          <navigation-items></navigation-items>
           <theme-toggler
             class="-mt-1"
             :is-toggled-on="isToggledOn"
@@ -162,56 +145,10 @@
                 </svg>
               </button>
             </div>
-            <div class="mt-8 px-3">
-              <nav class="grid gap-y-8" @click="mobileMenu = false">
-                <nuxt-link
-                  v-for="item in menuItems"
-                  :key="item.name"
-                  :to="item.to"
-                  class="
-                    transition
-                    duration-300
-                    flex
-                    items-center
-                    -m-3
-                    py-3
-                    text-base
-                    font-medium
-                    text-gray-500
-                    dark:text-gray-300
-                    border-b-2 border-transparent
-                    hover:text-primary-900
-                    dark:hover:text-primary-400
-                    hover:border-b-2 hover:border-primary-900
-                    dark:hover:border-primary-400
-                  "
-                >
-                  <outline-home-icon
-                    v-if="item.name === 'Home'"
-                    class="w-5 h-5"
-                  />
-                  <outline-user-icon
-                    v-if="item.name === 'About'"
-                    class="w-5 h-5"
-                  />
-                  <outline-mail-icon
-                    v-if="item.name === 'Contact'"
-                    class="w-5 h-5"
-                  />
-                  <outline-music-note-icon
-                    v-if="item.name === 'Music'"
-                    class="w-5 h-5"
-                  />
-                  <outline-photograph-icon
-                    v-if="item.name === 'Photos'"
-                    class="w-5 h-5"
-                  />
-                  <span class="ml-3">
-                    {{ item.name }}
-                  </span>
-                </nuxt-link>
-              </nav>
-            </div>
+            <navigation-items
+              is-mobile
+              @close="mobileMenu = false"
+            ></navigation-items>
           </div>
         </div>
       </div>
@@ -226,29 +163,7 @@ export default Vue.extend({
   data() {
     return {
       mobileMenu: false,
-      isToggledOn: false,
-      menuItems: [
-        {
-          name: 'Home',
-          to: '/'
-        },
-        {
-          name: 'About',
-          to: '/about'
-        },
-        {
-          name: 'Music',
-          to: '/music'
-        },
-        {
-          name: 'Photos',
-          to: '/photos'
-        },
-        {
-          name: 'Contact',
-          to: '/contact'
-        }
-      ]
+      isToggledOn: false
     }
   },
   computed: {

@@ -1,22 +1,14 @@
 <template>
   <div>
     <div>
-      <h2 class="title">Hi, my name is Müjdat.</h2>
-      <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-        <p>
-          I'm a Front-End Developer based in Dresden, Germany. Currently, I'm
-          working at
-          <a target="_blank" rel="noopener" href="https://phmu.de" title="PHMU"
-            ><strong>PHMU</strong></a
-          >
-          and also as a freelancer on the side. This is my personal website
-          where you'll be able to find stuff I'm working on, music I listen to
-          or create and photos I take or like.
-        </p>
-      </div>
+      <h2 class="title">{{ $t('pages.home.title') }}</h2>
+      <div
+        class="prose-sm md:prose md:max-w-none dark:prose-dark"
+        v-html="$sanitize($t('pages.home.text'))"
+      ></div>
       <nuxt-link to="about">
         <btn class="mt-8"
-          ><span>More about me</span>
+          ><span>{{ $t('pages.home.buttonText') }}</span>
           <outline-external-link-icon
             class="w-4 h-4 ml-2"
           ></outline-external-link-icon>
@@ -24,9 +16,9 @@
       </nuxt-link>
     </div>
     <div class="mt-16">
-      <h2 class="title">Projects / Clients</h2>
+      <h2 class="title">{{ $t('pages.home.referencesTitle') }}</h2>
       <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
-        <p>Here are some of the clients I've worked with:</p>
+        <p>{{ $t('pages.home.referencesText') }}</p>
       </div>
     </div>
     <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">

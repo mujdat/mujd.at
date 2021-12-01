@@ -24,17 +24,26 @@
       ]
     },
     "types": [
-      "@nuxt/types",
       "@nuxtjs/color-mode",
-      "@types/node",
       "@nuxtjs/axios",
-      "vite/client"
+      "@nuxtjs/i18n",
+      "@types/node",
+      "vite/client",
+      "@nuxt/types",
     ],
     "typeRoots": ["./types/*"]
+  },
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 2,
+    "experimentalTemplateCompilerOptions": {
+      "compatConfig": {
+        "MODE": 2
+      }
+    }
   },
   "exclude": [
     "node_modules",
     ".nuxt",
     "dist"
-  ]
+  ],
 }
