@@ -6,7 +6,7 @@
         {{ page[0].data.title ? page[0].data.title[0].text : '' }}
       </h2>
       <prismic-rich-text
-        class="prose md:max-w-none dark:prose-dark"
+        class="prose-sm md:prose md:max-w-none dark:prose-dark"
         :field="page[0].data.content"
       />
     </div>
@@ -14,20 +14,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useMeta, useStore } from '@nuxtjs/composition-api'
+import {
+  defineComponent,
+  useMeta,
+  useStore,
+  useContext,
+  computed
+} from '@nuxtjs/composition-api'
 import { usePrismicAPI } from 'nuxt-use-prismic-api'
 import { RootState } from '@/store'
 
 export default defineComponent({
   name: 'ImprintPage',
   setup() {
+    const ctx = useContext()
     const store = useStore<RootState>()
     useMeta({ title: store.state.meta.imprint.title })
+    const locale = computed(() => ctx.i18n.getLocaleCookie())
+    const uid = locale && locale.value === 'en' ? 'imprint' : 'impressum'
     const { page, pageLoading } = usePrismicAPI({
       data: 'page',
       method: 'getByUID',
       docType: 'page',
-      uid: 'imprint'
+      uid
     })
     return { page, pageLoading }
   },

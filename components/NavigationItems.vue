@@ -1,6 +1,6 @@
 <template>
   <div v-if="isMobile">
-    <nav class="pt-5" @click="$emit('nope')">
+    <nav class="pt-5" @click="$emit('close')">
       <nuxt-link
         :to="localePath($t('menuItems.home.to'))"
         class="menu-item-mobile"
