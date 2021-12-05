@@ -2,7 +2,9 @@
   <div class="w-full">
     <div
       class="
-        md:flex md:flex-row md:items-center md:justify-between
+        flex flex-row
+        items-center
+        justify-between
         text-gray-900
         dark:text-gray-300
         py-6
@@ -15,26 +17,21 @@
         relative
       "
     >
-      <div class="grid grid-cols-3 gap-y-4 md:flex md:space-x-2">
-        <nuxt-link
-          class="
-            md:flex md:flex-row
-            w-auto
-            transition
-            duration-300
-            hover:text-primary-900
-            dark:hover:text-primary-400
-          "
-          :to="$t('menuItems.imprint.to')"
-        >
-          {{ $t('menuItems.imprint.name') }}
-        </nuxt-link>
-      </div>
-      <div class="absolute right-1 top-8 md:relative md:right-0 md:top-0">
-        <a href="#" title="Scroll to top">
-          <outline-chevron-up-icon class="h-8 w-8"></outline-chevron-up-icon>
-        </a>
-      </div>
+      <nuxt-link
+        class="
+          transition
+          duration-300
+          hover:text-primary-900
+          dark:hover:text-primary-400
+        "
+        :to="$t('menuItems.imprint.to')"
+      >
+        {{ $t('menuItems.imprint.name') }}
+      </nuxt-link>
+
+      <a href="#" title="Scroll to top">
+        <outline-chevron-up-icon class="h-8 w-8"></outline-chevron-up-icon>
+      </a>
     </div>
     <cookie-control :locale="locale" />
   </div>
