@@ -40,7 +40,7 @@
           "
           :class="
             $i18n.locale && $i18n.locale === 'de'
-              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400;'
+              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400'
               : ''
           "
           @click="$i18n.setLocale('de')"
@@ -58,7 +58,7 @@
           "
           :class="
             $i18n.locale && $i18n.locale === 'en'
-              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400;'
+              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400'
               : ''
           "
           @click="$i18n.setLocale('en')"

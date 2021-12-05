@@ -69,7 +69,7 @@ export default defineComponent({
 </script>
 <style lang="postcss">
 .menu-item-desktop {
-  @apply transition duration-300 text-base font-medium text-gray-900 dark:text-gray-300 hover:text-primary-900 hover:border-primary-900 dark:hover:text-primary-400 dark:hover:border-primary-300 border-b-2 border-transparent;
+  @apply transition duration-300 text-base font-medium text-gray-900 dark:text-gray-300 hover:text-primary-900 hover:border-primary-900 dark:hover:text-primary-400 dark:hover:border-primary-400 border-b-2 border-transparent;
 }
 .menu-item-mobile {
   @apply transition duration-300 flex items-center py-3 text-base font-medium text-gray-500 dark:text-gray-300 border-b-2 border-transparent hover:text-primary-900 dark:hover:text-primary-400 hover:border-b-2 hover:border-primary-900 dark:hover:border-primary-400;
