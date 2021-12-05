@@ -17,17 +17,55 @@
         relative
       "
     >
-      <nuxt-link
-        class="
-          transition
-          duration-300
-          hover:text-primary-900
-          dark:hover:text-primary-400
-        "
-        :to="$t('menuItems.imprint.to')"
-      >
-        {{ $t('menuItems.imprint.name') }}
-      </nuxt-link>
+      <div class="flex space-x-2.5">
+        <nuxt-link
+          class="
+            transition
+            duration-300
+            hover:text-primary-900
+            dark:hover:text-primary-400
+          "
+          :to="$t('menuItems.imprint.to')"
+        >
+          {{ $t('menuItems.imprint.name') }}
+        </nuxt-link>
+        <span>&middot;</span>
+        <span
+          class="
+            transition
+            duration-300
+            hover:text-primary-900
+            dark:hover:text-primary-400
+            cursor-pointer
+          "
+          :class="
+            $i18n.locale && $i18n.locale === 'de'
+              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400;'
+              : ''
+          "
+          @click="$i18n.setLocale('de')"
+        >
+          DE
+        </span>
+        <span>&middot;</span>
+        <span
+          class="
+            transition
+            duration-300
+            hover:text-primary-900
+            dark:hover:text-primary-400
+            cursor-pointer
+          "
+          :class="
+            $i18n.locale && $i18n.locale === 'en'
+              ? 'text-primary-900 border-b-2 dark:text-primary-400 border-primary-900 dark:border-primary-400;'
+              : ''
+          "
+          @click="$i18n.setLocale('en')"
+        >
+          EN
+        </span>
+      </div>
 
       <a href="#" title="Scroll to top">
         <outline-chevron-up-icon class="h-8 w-8"></outline-chevron-up-icon>
@@ -43,35 +81,9 @@ import { defineComponent, useContext, computed } from '@nuxtjs/composition-api'
 export default defineComponent({
   name: 'TheFooter',
   setup() {
-    const menuItems = [
-      {
-        name: 'Home',
-        to: '/'
-      },
-      {
-        name: 'About',
-        to: '/about'
-      },
-      {
-        name: 'Music',
-        to: '/music'
-      },
-      {
-        name: 'Photos',
-        to: '/photos'
-      },
-      {
-        name: 'Contact',
-        to: '/contact'
-      },
-      {
-        name: 'Imprint',
-        to: '/imprint'
-      }
-    ]
     const ctx = useContext()
     const locale = computed(() => ctx.i18n.getLocaleCookie())
-    return { menuItems, locale }
+    return { locale }
   }
 })
 </script>

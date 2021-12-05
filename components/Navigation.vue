@@ -107,7 +107,7 @@
         >
           <div class="pb-5 px-5">
             <div class="flex items-center justify-between">
-              <avatar class="mt-2"></avatar>
+              <avatar class="mt-5"></avatar>
               <button
                 type="button"
                 class="
