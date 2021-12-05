@@ -109,7 +109,7 @@ export default {
     [
       'nuxt-cookie-control',
       {
-        controlButton: true,
+        controlButton: false,
         css: true
       }
     ]
