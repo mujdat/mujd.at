@@ -77,10 +77,31 @@ export default defineComponent({
 </script>
 <style lang="postcss">
 .cookieControl__BarContainer {
-  @apply prose max-w-none bg-gray-200 dark:bg-[#111];
+  @apply bg-gray-200 dark:bg-[#111];
+}
+.cookieControl__BarContainer,
+.cookieControl__BarButtons button,
+.cookieControl__ModalContent {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+.cookieControl__ModalContent {
+  @apply rounded-md dark:text-gray-200 dark:bg-[#111];
+}
+
+.cookieControl__BarButtons button,
+.cookieControl__ModalButtons button,
+button.cookieControl__ModalClose {
+  @apply transition duration-300 inline-flex  items-center  border border-transparent font-bold rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+}
+.cookieControl__BarContainer div {
+  @apply prose dark:prose-dark;
 }
 .cookieControl__BarContainer h3,
-.cookieControl__BarContainer p {
-  @apply text-[#111] dark:text-gray-200;
+.cookieControl__BarContainer p,
+.cookieControl__ModalContent h3,
+.cookieControl__ModalInputWrapper span,
+.cookieControl__ModalContent ul > li {
+  @apply text-gray-700 dark:text-gray-300 mr-0 md:mr-8;
 }
 </style>

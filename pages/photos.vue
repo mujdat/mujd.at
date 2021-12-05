@@ -15,7 +15,7 @@
           {{ $t('pages.photos.title') }}
         </h2>
         <div
-          class="prose-sm md:prose md:max-w-none dark:prose-dark"
+          class="prose md:max-w-none dark:prose-dark"
           v-html="$sanitize($t('pages.music.text'))"
         ></div>
       </div>

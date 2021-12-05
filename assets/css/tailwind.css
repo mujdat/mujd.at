@@ -20,13 +20,13 @@ html {
 
 .page-enter-active,
 .page-leave-active {
-  @apply transition opacity-25
+  @apply transition opacity-25;
 }
 .page-enter,
 .page-leave-to {
-  @apply opacity-0
+  @apply opacity-0;
 }
 
 .title {
-  @apply text-xl md:text-3xl mb-6 font-extrabold text-gray-900 dark:text-gray-300
+  @apply text-xl md:text-3xl mb-6 font-extrabold text-gray-900 dark:text-gray-300;
 }

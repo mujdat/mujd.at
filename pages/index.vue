@@ -3,7 +3,7 @@
     <div>
       <h2 class="title">{{ $t('pages.home.title') }}</h2>
       <div
-        class="prose-sm md:prose md:max-w-none dark:prose-dark"
+        class="prose md:max-w-none dark:prose-dark"
         v-html="$sanitize($t('pages.home.text'))"
       ></div>
       <nuxt-link to="about">
@@ -17,7 +17,7 @@
     </div>
     <div class="mt-16">
       <h2 class="title">{{ $t('pages.home.referencesTitle') }}</h2>
-      <div class="prose-sm md:prose md:max-w-none dark:prose-dark">
+      <div class="prose md:max-w-none dark:prose-dark">
         <p>{{ $t('pages.home.referencesText') }}</p>
       </div>
     </div>

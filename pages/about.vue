@@ -41,7 +41,7 @@
         </div>
       </div>
       <div
-        class="prose-sm md:prose md:max-w-none dark:prose-dark"
+        class="prose md:max-w-none dark:prose-dark"
         v-html="$sanitize($t('pages.about.text'))"
       ></div>
     </div>

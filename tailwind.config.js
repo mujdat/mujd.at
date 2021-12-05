@@ -13,11 +13,6 @@ module.exports = {
     extend: {
       typography(theme) {
         return {
-          DEFAULT: {
-            css: {
-              p: { fontSize: '1.125rem' }
-            }
-          },
           dark: {
             css: {
               color: theme('colors.gray.300'),

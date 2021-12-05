@@ -17,7 +17,7 @@
         <avatar resolution="desktop"></avatar>
         <div class="sm:hidden flex items-center">
           <theme-toggler
-            class="mr-10"
+            class="mr-6"
             :is-toggled-on="isToggledOn"
             @toggle="toggleTheme"
           ></theme-toggler>
@@ -62,7 +62,7 @@
             </svg>
           </button>
         </div>
-        <nav class="hidden sm:flex space-x-10">
+        <nav class="hidden sm:flex">
           <navigation-items></navigation-items>
           <theme-toggler
             class="-mt-1"
@@ -105,7 +105,7 @@
             divide-y-2 divide-gray-50
           "
         >
-          <div class="pb-8 pt-3 px-5">
+          <div class="pb-5 px-5">
             <div class="flex items-center justify-between">
               <avatar class="mt-2"></avatar>
               <button
@@ -216,10 +216,3 @@ export default Vue.extend({
   }
 })
 </script>
-<style lang="postcss">
-nav [aria-current]:not([aria-current='false']) {
-  @apply border-b-2;
-  @apply text-primary-900 dark:text-primary-400;
-  @apply border-primary-900 dark:border-primary-400;
-}
-</style>
