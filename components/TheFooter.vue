@@ -2,19 +2,18 @@
   <div class="w-full">
     <div
       class="
+        relative
         flex flex-row
         items-center
         justify-between
-        text-gray-900
-        dark:text-gray-300
+        w-full
         py-6
         text-xs
         font-medium
+        text-gray-900
         uppercase
         border-t border-gray-100
-        dark:border-gray-800
-        w-full
-        relative
+        dark:text-gray-300 dark:border-gray-800
       "
     >
       <div class="flex space-x-2.5">
@@ -34,9 +33,9 @@
           class="
             transition
             duration-300
+            cursor-pointer
             hover:text-primary-900
             dark:hover:text-primary-400
-            cursor-pointer
           "
           :class="
             $i18n.locale && $i18n.locale === 'de'
@@ -52,9 +51,9 @@
           class="
             transition
             duration-300
+            cursor-pointer
             hover:text-primary-900
             dark:hover:text-primary-400
-            cursor-pointer
           "
           :class="
             $i18n.locale && $i18n.locale === 'en'
@@ -68,7 +67,7 @@
       </div>
 
       <a href="#" title="Scroll to top">
-        <outline-chevron-up-icon class="h-8 w-8"></outline-chevron-up-icon>
+        <outline-chevron-up-icon class="w-8 h-8"></outline-chevron-up-icon>
       </a>
     </div>
     <cookie-control :locale="locale" />
@@ -96,6 +95,7 @@ export default defineComponent({
 .cookieControl__ModalContent {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
+  @apply text-center;
 }
 .cookieControl__ModalContent {
   @apply rounded-md dark:text-gray-200 dark:bg-[#111];

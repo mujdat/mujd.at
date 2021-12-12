@@ -128,6 +128,19 @@ export default {
         },
         cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
       }
+    ],
+    optional: [
+      {
+        name: {
+          de: 'i18n Browser Spracherkennung',
+          en: 'i18n Detect Browser Language'
+        },
+        description: {
+          de: 'Wird zur Spracherkennung der Browser verwendet um die Sprache der Webseite automatisch zu ändern.',
+          en: 'Used to detect browser languange in order to automatically change the language of the website.'
+        },
+        cookies: ['i18n_redirected']
+      }
     ]
   },
 
@@ -147,6 +160,8 @@ export default {
       }
     ],
     detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
       onlyOnRoot: true,
       fallbackLocale: 'en'
     },
