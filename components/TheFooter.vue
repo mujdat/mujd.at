@@ -95,7 +95,6 @@ export default defineComponent({
 .cookieControl__ModalContent {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif;
-  @apply text-center;
 }
 .cookieControl__ModalContent {
   @apply rounded-md dark:text-gray-200 dark:bg-[#111];
@@ -104,7 +103,7 @@ export default defineComponent({
 .cookieControl__BarButtons button,
 .cookieControl__ModalButtons button,
 button.cookieControl__ModalClose {
-  @apply transition duration-300 inline-flex  items-center  border border-transparent font-bold rounded-full shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  @apply transition duration-300 inline-flex items-center justify-center border border-transparent font-bold rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
 }
 .cookieControl__BarContainer div {
   @apply prose dark:prose-dark;

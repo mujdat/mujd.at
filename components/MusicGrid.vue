@@ -83,7 +83,7 @@
                 class="
                   border
                   p-2
-                  rounded-full
+                  rounded-lg
                   focus:outline-none
                   focus:ring-2
                   focus:ring-offset-2

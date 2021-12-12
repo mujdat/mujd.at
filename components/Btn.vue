@@ -7,7 +7,7 @@
       items-center
       border border-transparent
       font-bold
-      rounded-full
+      rounded-lg
       shadow-sm
       text-white
       bg-primary-600
