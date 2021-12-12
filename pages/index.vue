@@ -7,7 +7,7 @@
         v-html="$sanitize($t('pages.home.text'))"
       ></div>
       <nuxt-link to="about">
-        <btn class="mt-8"
+        <btn size="sm" class="mt-8"
           ><span>{{ $t('pages.home.buttonText') }}</span>
           <outline-external-link-icon
             class="w-4 h-4 ml-2"
